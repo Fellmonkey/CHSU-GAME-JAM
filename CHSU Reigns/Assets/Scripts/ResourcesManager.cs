@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+/// <summary>
+/// Менеджер ресурсов.
+/// </summary>
 public static class ResourcesManager
 {
     private static List<NamedSprite> sprites = new List<NamedSprite>();
@@ -10,7 +13,6 @@ public static class ResourcesManager
     /// <summary>
     /// Загружает карты из папки Resources.
     /// </summary>
-    /// <returns></returns>
     public static Card[] GetCards()
     {
         TextAsset[] textsAssets = Resources.LoadAll<TextAsset>("Cards");
@@ -30,8 +32,6 @@ public static class ResourcesManager
     /// <summary>
     /// Возвращает спрайт из папки Resources.
     /// </summary>
-    /// <param name="name"></param>
-    /// <returns></returns>
     public static Sprite GetSprite(string name)
     {
         for (int i = 0; i < sprites.Count; i++)

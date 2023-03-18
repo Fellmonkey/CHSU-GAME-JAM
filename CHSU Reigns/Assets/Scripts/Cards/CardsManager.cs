@@ -1,6 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// Менеджер всех игровых карт.
+/// </summary>
 public static class CardsManager
 {
 
@@ -75,11 +79,10 @@ public static class CardsManager
     /// Вводит полученную карту в игру.
     /// </summary>
     /// <param name="card"></param>
-    public static void PutСardIntoGame(Card card)
+    public static void PutСardIntoGame(Card card, GameObject cardPrefab, Transform cardHolder)
     {
-        GameObject prefab = GameManager.instance.CardPrefab;
-        GameObject go = Object.Instantiate(prefab, Vector3.zero, 
-            Quaternion.identity, GameManager.instance.CardHolder);
+        GameObject go = Object.Instantiate(cardPrefab, Vector3.zero, 
+            Quaternion.identity, cardHolder);
         go.GetComponent<CardController>().InitCard(card);
         gameCard = card;
     }

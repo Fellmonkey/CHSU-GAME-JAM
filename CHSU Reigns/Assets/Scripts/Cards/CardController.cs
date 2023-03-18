@@ -8,21 +8,22 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class CardController : MonoBehaviour, IBeginDragHandler,  IDragHandler, IEndDragHandler
 {
-    public Card card;
+    public Card card { get; private set; }
 
-    [SerializeField] private TextOnCardController textOnCardController;
+    // Средство управления текстом у карты.
+    [SerializeField] private TextOnCardController textController;
 
-    [Header("Start card position")]
+    [Header("Start card position")] // начальная позиция карты
     [SerializeField] private Vector3 startPosition;
 
-    [Header("Swipe positions")]
+    [Header("Swipe positions")] // позиции карты при свайпе
     [SerializeField] private Vector3 swipePositionRight;
     [SerializeField] private Vector3 swipePositionLeft;
 
-    [Header("Values")]
-    [SerializeField] private float swipingSpeed;
-    [SerializeField] private float returnSpeed;
-    [SerializeField] private float rotationCoefficent;
+    [Header("Values")] // разные значения
+    [SerializeField] private float swipingSpeed; // скорость при свайпе
+    [SerializeField] private float returnSpeed; // скорость возврата к исходной позиции
+    [SerializeField] private float rotationCoefficent; // коэф. вращения
 
     [Header("Maximum deviations")] // Максимальные отклонения карты (чтобы не ушла за экран)
     [SerializeField] private float maxDeviationRight;
@@ -30,19 +31,24 @@ public class CardController : MonoBehaviour, IBeginDragHandler,  IDragHandler, I
     [SerializeField] private float maxDeviationUp;
     [SerializeField] private float maxDeviationDown;
 
-    [Header("Deviation for show text")]
+    [Header("Deviation for show text")] // отколнения, при которых уже возможен свайп.
     [SerializeField] private float deviationRight;
     [SerializeField] private float deviationLeft;
 
 
-    private RectTransform rectTransform;
+    private RectTransform rectTransform; // этого объекта
     private Vector3 startMousePos;
 
-    private SwipeType swipeType;
+    private SwipeType swipeType; // тип свайпа
 
     [SerializeField] private bool isDragging; // перетаскиваем
     [SerializeField] private bool isSwiping; // карту свайпнули
 
+
+    /// <summary>
+    /// Инициализация карты.
+    /// </summary>
+    /// <param name="card"></param>
     public void InitCard(Card card)
     {
         this.card = card;
@@ -54,6 +60,10 @@ public class CardController : MonoBehaviour, IBeginDragHandler,  IDragHandler, I
         rectTransform.localPosition = startPosition;
         isDragging = false;
         isSwiping = false;
+
+        UIManager.instance.SetTitle(card.title); // Ставим текст
+        textController.SetLeftText(card.swipe_left.text);
+        textController.SetRightText(card.swipe_right.text);
     }
 
     private void Update()
@@ -103,12 +113,24 @@ public class CardController : MonoBehaviour, IBeginDragHandler,  IDragHandler, I
 
         rectTransform.localPosition = newPos;
 
+        // если перетащили карту вправо
         if (rectTransform.localPosition.x >= deviationRight)
-            textOnCardController.ShowText(SwipeType.Right); 
+        {
+            textController.ShowText(SwipeType.Right); // показать правый текст
+            UIManager.instance.ShowCardPerformanceForCharacteristics(card, SwipeType.Right); // что будет с хар-ками
+        }
+        // если карту карту влево
         else if (rectTransform.localPosition.x <= deviationLeft)
-            textOnCardController.ShowText(SwipeType.Left);
+        {
+            textController.ShowText(SwipeType.Left); // показать левый текст
+            UIManager.instance.ShowCardPerformanceForCharacteristics(card, SwipeType.Left); // что будет с хар-ками
+        }
         else
-            textOnCardController.HideText();
+        {
+            textController.HideText();
+            UIManager.instance.HideCardPerformanceForCharacteristics();
+        }
+            
             
         UpdateRotationCard();
     }
@@ -122,7 +144,8 @@ public class CardController : MonoBehaviour, IBeginDragHandler,  IDragHandler, I
     public void OnEndDrag(PointerEventData eventData)
     {
         isDragging = false;
-        textOnCardController.HideText();
+        textController.HideText();
+        UIManager.instance.HideCardPerformanceForCharacteristics();
 
         if (rectTransform.localPosition.x >= deviationRight)
         {

@@ -134,7 +134,7 @@ MonoBehaviour:
         knowledge: 0
         health: 0
         money: 0
-  textOnCardController: {fileID: 633622884079496613}
+  textController: {fileID: 633622884079496613}
   startPosition: {x: 0, y: -100, z: 0}
   swipePositionRight: {x: 900, y: -600, z: 0}
   swipePositionLeft: {x: -900, y: -600, z: 0}
@@ -147,6 +147,8 @@ MonoBehaviour:
   maxDeviationDown: -150
   deviationRight: 150
   deviationLeft: -150
+  isDragging: 0
+  isSwiping: 0
 --- !u!114 &633622884079496613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +197,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5327473135424110956
 RectTransform:
   m_ObjectHideFlags: 0
@@ -482,7 +484,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6941135082467907630
 RectTransform:
   m_ObjectHideFlags: 0

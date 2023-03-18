@@ -3,19 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using Unity.VisualScripting;
+using static EffectOnCharacteristic;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    [Header("Game characteristics")]
-    [SerializeField] private Characteristics gameCharacteristics;
+    // Game characteristics
+    public Characteristics gameCharacteristics { get; private set; }
+    public PlayerClass playerClass { get; private set; }
+    public int gameDay { get; private set; }
+
 
     [Header("Card prefab")]
-    public GameObject CardPrefab;
+    [SerializeField] private GameObject CardPrefab;
 
     [Header("Card holder")]
-    public Transform CardHolder;
+    [SerializeField] private Transform CardHolder;
 
 
     private void Awake()
@@ -29,14 +34,22 @@ public class GameManager : MonoBehaviour
         CreateNewCard();
     }
 
+
+    /// <summary>
+    /// Ñâàéï êàğòû.
+    /// </summary>
     public void SwipingCard(Card card, SwipeType swipeType, GameObject go)
     {
         Destroy(go, 2);
         Invoke("CreateNewCard", 0.5f);
     }
 
+
+    /// <summary>
+    /// Ñîçäàíèå íîâîé êàğòû íà èãğîâîì ïîëå.
+    /// </summary>
     public void CreateNewCard()
     {
-        CardsManager.PutÑardIntoGame(CardsManager.GetRandomCard());
+        CardsManager.PutÑardIntoGame(CardsManager.GetRandomCard(), CardPrefab, CardHolder);
     }
 }
