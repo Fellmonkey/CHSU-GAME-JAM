@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
-{
+{/*
     //Card
     public GameManager gameManager;
     public GameObject card;
+
     //UI icons
     public Image kingdomSafety;
     public Image kingdomFaith;
@@ -126,5 +127,5 @@ public class UIManager : MonoBehaviour
         if(gameManager.currentCard.kTreasureL > 0)
             kingdomTreasureAnimator.Play("moneyEffectGrow");
         }
-    }
+    }*/
 }
