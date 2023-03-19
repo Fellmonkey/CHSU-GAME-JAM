@@ -37,8 +37,23 @@ public class UIManager : MonoBehaviour
     {
         for (int i = 0; i < effectsOnCharacteristics.Length; i++)
         {
-            //int effect = card.GetCharacteristic(swipeType, GameManager.instance.playerClass, effectsOnCharacteristics[i].characteristicType);
-            effectsOnCharacteristics[i].controller.ShowEffect(EffectOnCharacteristicController.EffectSizePerCharacteristic.Large);
+            // Влияние на данную характеристику
+            int effect = card.GetCharacteristic(swipeType, 
+                GameManager.instance.playerClass, 
+                effectsOnCharacteristics[i].characteristicType);
+
+            effect = Mathf.Abs(effect); // Смотрим по модулю
+
+            if (effect == Characteristics.smallChange) // маленькое
+            {
+                effectsOnCharacteristics[i].controller.ShowEffect(
+                    EffectOnCharacteristicController.EffectSizePerCharacteristic.Small);    
+            }
+            else // Значительное
+            {
+                effectsOnCharacteristics[i].controller.ShowEffect(
+                    EffectOnCharacteristicController.EffectSizePerCharacteristic.Large);
+            }
         }
     }
 

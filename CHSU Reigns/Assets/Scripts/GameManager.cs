@@ -50,6 +50,6 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void CreateNewCard()
     {
-        CardsManager.PutÑardIntoGame(CardsManager.GetRandomCard(), CardPrefab, CardHolder);
+        CardsManager.PutCardIntoGame(CardsManager.GetRandomCard(), CardPrefab, CardHolder);
     }
 }

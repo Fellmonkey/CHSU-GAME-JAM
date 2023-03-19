@@ -79,7 +79,7 @@ public static class CardsManager
     /// Вводит полученную карту в игру.
     /// </summary>
     /// <param name="card"></param>
-    public static void PutСardIntoGame(Card card, GameObject cardPrefab, Transform cardHolder)
+    public static void PutCardIntoGame(Card card, GameObject cardPrefab, Transform cardHolder)
     {
         GameObject go = Object.Instantiate(cardPrefab, Vector3.zero, 
             Quaternion.identity, cardHolder);

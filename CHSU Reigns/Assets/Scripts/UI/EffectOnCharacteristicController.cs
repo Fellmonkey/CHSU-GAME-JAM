@@ -8,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public class EffectOnCharacteristicController : MonoBehaviour
 {
-    private static float speedAnimation = 25;
+    private static float speedAnimation = 30;
     private RectTransform rectTransform;
     private Vector2 newSize;
 
@@ -54,7 +54,7 @@ public class EffectOnCharacteristicController : MonoBehaviour
     /// </summary>
     public enum EffectSizePerCharacteristic : int
     {
-        Normal = 18,
+        Small = 18,
         Large = 28
     }
 }
