@@ -3,34 +3,34 @@ using UnityEngine;
 
 
 /// <summary>
-/// Менеджер всех игровых карт.
+/// РњРµРЅРµРґР¶РµСЂ РІСЃРµС… РёРіСЂРѕРІС‹С… РєР°СЂС‚.
 /// </summary>
 public static class CardsManager
 {
 
     /// <summary>
-    /// Карта, которая сейчас в игре.
+    /// РљР°СЂС‚Р°, РєРѕС‚РѕСЂР°СЏ СЃРµР№С‡Р°СЃ РІ РёРіСЂРµ.
     /// </summary>
     public static Card gameCard { private set; get; }
 
     /// <summary>
-    /// Все игровые карты.
+    /// Р’СЃРµ РёРіСЂРѕРІС‹Рµ РєР°СЂС‚С‹.
     /// </summary>
     public static Card[] cards { private set; get; }
 
     /// <summary>
-    /// Карты оперделённых дней.
+    /// РљР°СЂС‚С‹ РѕРїРµСЂРґРµР»С‘РЅРЅС‹С… РґРЅРµР№.
     /// </summary>
     public static Card[] eventCards { private set; get; }
 
     /// <summary>
-    /// Случайные карты.
+    /// РЎР»СѓС‡Р°Р№РЅС‹Рµ РєР°СЂС‚С‹.
     /// </summary>
     public static Card[] randomCards { private set; get; }
 
 
     /// <summary>
-    /// Загружает карты.
+    /// Р—Р°РіСЂСѓР¶Р°РµС‚ РєР°СЂС‚С‹.
     /// </summary>
     public static void LoadCards()
     {
@@ -51,7 +51,7 @@ public static class CardsManager
     }
 
     /// <summary>
-    /// Возвращает случайную карту (не дневную).
+    /// Р’РѕР·РІСЂР°С‰Р°РµС‚ СЃР»СѓС‡Р°Р№РЅСѓСЋ РєР°СЂС‚Сѓ (РЅРµ РґРЅРµРІРЅСѓСЋ).
     /// </summary>
     /// <returns></returns>
     public static Card GetRandomCard()
@@ -61,9 +61,9 @@ public static class CardsManager
     }
 
     /// <summary>
-    /// Ищет карту, которая связана с полученным днем.
+    /// РС‰РµС‚ РєР°СЂС‚Сѓ, РєРѕС‚РѕСЂР°СЏ СЃРІСЏР·Р°РЅР° СЃ РїРѕР»СѓС‡РµРЅРЅС‹Рј РґРЅРµРј.
     /// </summary>
-    /// <returns>Возвращает эту карту, если она найдена, иначе null.</returns>
+    /// <returns>Р’РѕР·РІСЂР°С‰Р°РµС‚ СЌС‚Сѓ РєР°СЂС‚Сѓ, РµСЃР»Рё РѕРЅР° РЅР°Р№РґРµРЅР°, РёРЅР°С‡Рµ null.</returns>
     public static Card CheckTheDayCard(int day)
     {
         for (int i = 0; i < eventCards.Length; i++)
@@ -76,7 +76,7 @@ public static class CardsManager
     }
 
     /// <summary>
-    /// Вводит полученную карту в игру.
+    /// Р’РІРѕРґРёС‚ РїРѕР»СѓС‡РµРЅРЅСѓСЋ РєР°СЂС‚Сѓ РІ РёРіСЂСѓ.
     /// </summary>
     /// <param name="card"></param>
     public static void PutCardIntoGame(Card card, GameObject cardPrefab, Transform cardHolder)

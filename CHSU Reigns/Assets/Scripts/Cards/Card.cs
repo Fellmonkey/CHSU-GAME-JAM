@@ -1,19 +1,19 @@
 
 /// <summary>
-/// Игровая карта.
+/// РРіСЂРѕРІР°СЏ РєР°СЂС‚Р°.
 /// </summary>
 [System.Serializable]
 public class Card
 {
     private static int _id = 0;
-    public readonly int id; // ид 
+    public readonly int id; // РёРґ 
 
-    public string title; // заголовок
-    public int day; // день
-    public string backgroundImageName; // задний фон
-    public string cardImageName; // изображение на карте
-    public Swipe swipe_left; // свайп влево
-    public Swipe swipe_right; // свайп вправо
+    public string title; // Р·Р°РіРѕР»РѕРІРѕРє
+    public int day; // РґРµРЅСЊ
+    public string backgroundImageName; // Р·Р°РґРЅРёР№ С„РѕРЅ
+    public string cardImageName; // РёР·РѕР±СЂР°Р¶РµРЅРёРµ РЅР° РєР°СЂС‚Рµ
+    public Swipe swipe_left; // СЃРІР°Р№Рї РІР»РµРІРѕ
+    public Swipe swipe_right; // СЃРІР°Р№Рї РІРїСЂР°РІРѕ
 
 
     public Card()
@@ -24,7 +24,7 @@ public class Card
     }
 
     /// <summary>
-    /// Возвращает всю характеристику по свайпу и классу игрока.
+    /// Р’РѕР·РІСЂР°С‰Р°РµС‚ РІСЃСЋ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєСѓ РїРѕ СЃРІР°Р№РїСѓ Рё РєР»Р°СЃСЃСѓ РёРіСЂРѕРєР°.
     /// </summary>
     public Characteristics GetCharacteristic(SwipeType swipeType, PlayerClass playerClass)
     {
@@ -36,7 +36,7 @@ public class Card
 
 
     /// <summary>
-    /// Возвращает определённую характеристику по свайпу и классу игрока.
+    /// Р’РѕР·РІСЂР°С‰Р°РµС‚ РѕРїСЂРµРґРµР»С‘РЅРЅСѓСЋ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєСѓ РїРѕ СЃРІР°Р№РїСѓ Рё РєР»Р°СЃСЃСѓ РёРіСЂРѕРєР°.
     /// </summary>
     public int GetCharacteristic(SwipeType swipeType, PlayerClass playerClass, CharacteristicType characteristicType)
     {
@@ -54,12 +54,12 @@ public class Card
     
     
     /// <summary>
-    /// Свайп карты. (влияние на классы)
+    /// РЎРІР°Р№Рї РєР°СЂС‚С‹. (РІР»РёСЏРЅРёРµ РЅР° РєР»Р°СЃСЃС‹)
     /// </summary>
     [System.Serializable]
     public class Swipe
     {
-        public string text; // текст при свайпе
+        public string text; // С‚РµРєСЃС‚ РїСЂРё СЃРІР°Р№РїРµ
         public Characteristics genius;
         public Characteristics psychologist;
         public Characteristics sportsman;
@@ -73,7 +73,7 @@ public class Card
 
 
         /// <summary>
-        /// Возвращает характеристику для определенного класса.
+        /// Р’РѕР·РІСЂР°С‰Р°РµС‚ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєСѓ РґР»СЏ РѕРїСЂРµРґРµР»РµРЅРЅРѕРіРѕ РєР»Р°СЃСЃР°.
         /// </summary>
         public Characteristics GetCharacteristics(PlayerClass playerClass)
         {

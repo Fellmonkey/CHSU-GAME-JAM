@@ -4,11 +4,11 @@ using UnityEngine;
 
 
 /// <summary>
-/// Контроллер влияния свайпа на характеристику. (контроллер кружочка)
+/// РљРѕРЅС‚СЂРѕР»Р»РµСЂ РІР»РёСЏРЅРёСЏ СЃРІР°Р№РїР° РЅР° С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєСѓ. (РєРѕРЅС‚СЂРѕР»Р»РµСЂ РєСЂСѓР¶РѕС‡РєР°)
 /// </summary>
 public class EffectOnCharacteristicController : MonoBehaviour
 {
-    private static float speedAnimation = 20; // Скорость анимации
+    private static float speedAnimation = 20; // РЎРєРѕСЂРѕСЃС‚СЊ Р°РЅРёРјР°С†РёРё
 
     [Header("Animation positions")]
     [SerializeField] private Vector3 startPosition;
@@ -27,7 +27,7 @@ public class EffectOnCharacteristicController : MonoBehaviour
 
     private void Update()
     {
-        // перемещаем кружочек
+        // РїРµСЂРµРјРµС‰Р°РµРј РєСЂСѓР¶РѕС‡РµРє
 
         Vector3 newPos = Vector3.Lerp(rectTransform.localPosition, 
             targetPosition, speedAnimation * Time.deltaTime);
@@ -37,17 +37,17 @@ public class EffectOnCharacteristicController : MonoBehaviour
 
 
     /// <summary>
-    /// Показать влияние. (кружочек)
+    /// РџРѕРєР°Р·Р°С‚СЊ РІР»РёСЏРЅРёРµ. (РєСЂСѓР¶РѕС‡РµРє)
     /// </summary>
     public void ShowEffect(EffectSizePerCharacteristic effect)
     {
-        rectTransform.sizeDelta = new Vector2((int)effect, (int)effect); // задаем размер
-        targetPosition = endPosition; // Устанавливаем новую позицию
+        rectTransform.sizeDelta = new Vector2((int)effect, (int)effect); // Р·Р°РґР°РµРј СЂР°Р·РјРµСЂ
+        targetPosition = endPosition; // РЈСЃС‚Р°РЅР°РІР»РёРІР°РµРј РЅРѕРІСѓСЋ РїРѕР·РёС†РёСЋ
     }
 
 
     /// <summary>
-    /// Скрыть влияние. (кружочек)
+    /// РЎРєСЂС‹С‚СЊ РІР»РёСЏРЅРёРµ. (РєСЂСѓР¶РѕС‡РµРє)
     /// </summary>
     public void HideEffect()
     {
@@ -56,7 +56,7 @@ public class EffectOnCharacteristicController : MonoBehaviour
 
 
     /// <summary>
-    /// Размер влияния на характеристику. (размер кружочка)
+    /// Р Р°Р·РјРµСЂ РІР»РёСЏРЅРёСЏ РЅР° С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєСѓ. (СЂР°Р·РјРµСЂ РєСЂСѓР¶РѕС‡РєР°)
     /// </summary>
     public enum EffectSizePerCharacteristic : int
     {

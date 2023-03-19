@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 /// <summary>
-/// Контроллер UI характеристики.
+/// РљРѕРЅС‚СЂРѕР»Р»РµСЂ UI С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё.
 /// </summary>
 public class UICharacteristicController : MonoBehaviour
 {

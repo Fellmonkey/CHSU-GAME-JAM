@@ -5,50 +5,50 @@ using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 
 /// <summary>
-/// Контроллер карты, которая сейчас в игре.
+/// РљРѕРЅС‚СЂРѕР»Р»РµСЂ РєР°СЂС‚С‹, РєРѕС‚РѕСЂР°СЏ СЃРµР№С‡Р°СЃ РІ РёРіСЂРµ.
 /// </summary>
 public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public Card card { get; private set; }
 
-    // Средство управления текстом у карты.
+    // РЎСЂРµРґСЃС‚РІРѕ СѓРїСЂР°РІР»РµРЅРёСЏ С‚РµРєСЃС‚РѕРј Сѓ РєР°СЂС‚С‹.
     private TextOnCardController textController;
 
-    [Header("Start card position")] // начальная позиция карты
+    [Header("Start card position")] // РЅР°С‡Р°Р»СЊРЅР°СЏ РїРѕР·РёС†РёСЏ РєР°СЂС‚С‹
     [SerializeField] private Vector3 startPosition;
 
-    [Header("Swipe positions")] // позиции карты при свайпе
+    [Header("Swipe positions")] // РїРѕР·РёС†РёРё РєР°СЂС‚С‹ РїСЂРё СЃРІР°Р№РїРµ
     [SerializeField] private Vector3 swipePositionRight;
     [SerializeField] private Vector3 swipePositionLeft;
 
-    [Header("Values")] // разные значения
-    [SerializeField] private float swipingSpeed; // скорость при свайпе
-    [SerializeField] private float returnSpeed; // скорость возврата к исходной позиции
-    [SerializeField] private float dragSpeed; // Скорость следования карты за мышкой
-    [SerializeField] private float rotationCoefficent; // коэф. вращения
+    [Header("Values")] // СЂР°Р·РЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ
+    [SerializeField] private float swipingSpeed; // СЃРєРѕСЂРѕСЃС‚СЊ РїСЂРё СЃРІР°Р№РїРµ
+    [SerializeField] private float returnSpeed; // СЃРєРѕСЂРѕСЃС‚СЊ РІРѕР·РІСЂР°С‚Р° Рє РёСЃС…РѕРґРЅРѕР№ РїРѕР·РёС†РёРё
+    [SerializeField] private float dragSpeed; // РЎРєРѕСЂРѕСЃС‚СЊ СЃР»РµРґРѕРІР°РЅРёСЏ РєР°СЂС‚С‹ Р·Р° РјС‹С€РєРѕР№
+    [SerializeField] private float rotationCoefficent; // РєРѕСЌС„. РІСЂР°С‰РµРЅРёСЏ
 
-    [Header("Maximum deviations")] // Максимальные отклонения карты (чтобы не ушла за экран)
+    [Header("Maximum deviations")] // РњР°РєСЃРёРјР°Р»СЊРЅС‹Рµ РѕС‚РєР»РѕРЅРµРЅРёСЏ РєР°СЂС‚С‹ (С‡С‚РѕР±С‹ РЅРµ СѓС€Р»Р° Р·Р° СЌРєСЂР°РЅ)
     [SerializeField] private float maxDeviationRight;
     [SerializeField] private float maxDeviationLeft;
     [SerializeField] private float maxDeviationUp;
     [SerializeField] private float maxDeviationDown;
 
-    [Header("Deviation for show text")] // отколнения, при которых уже возможен свайп.
+    [Header("Deviation for show text")] // РѕС‚РєРѕР»РЅРµРЅРёСЏ, РїСЂРё РєРѕС‚РѕСЂС‹С… СѓР¶Рµ РІРѕР·РјРѕР¶РµРЅ СЃРІР°Р№Рї.
     [SerializeField] private float deviationRight;
     [SerializeField] private float deviationLeft;
 
 
-    private RectTransform rectTransform; // этого объекта
+    private RectTransform rectTransform; // СЌС‚РѕРіРѕ РѕР±СЉРµРєС‚Р°
     private Vector3 startMousePos;
 
-    private SwipeType swipeType; // тип свайпа
+    private SwipeType swipeType; // С‚РёРї СЃРІР°Р№РїР°
 
-    [SerializeField] private bool isDragging; // перетаскиваем
-    [SerializeField] private bool isSwiping; // карту свайпнули
+    [SerializeField] private bool isDragging; // РїРµСЂРµС‚Р°СЃРєРёРІР°РµРј
+    [SerializeField] private bool isSwiping; // РєР°СЂС‚Сѓ СЃРІР°Р№РїРЅСѓР»Рё
 
 
     /// <summary>
-    /// Инициализация карты.
+    /// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РєР°СЂС‚С‹.
     /// </summary>
     /// <param name="card"></param>
     public void InitCard(Card card)
@@ -65,18 +65,18 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         isDragging = false;
         isSwiping = false;
 
-        UIManager.instance.SetTitle(card.title); // Ставим текст
+        UIManager.instance.SetTitle(card.title); // РЎС‚Р°РІРёРј С‚РµРєСЃС‚
         textController.SetLeftText(card.swipe_left.text);
         textController.SetRightText(card.swipe_right.text);
     }
 
     private void Update()
     {
-        if (isDragging) // перетаскивание карты
+        if (isDragging) // РїРµСЂРµС‚Р°СЃРєРёРІР°РЅРёРµ РєР°СЂС‚С‹
         {
             OnDrag();
         }
-        else if (isSwiping) // свайп карты
+        else if (isSwiping) // СЃРІР°Р№Рї РєР°СЂС‚С‹
         {
             Vector3 v;
 
@@ -92,7 +92,7 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
             rectTransform.localPosition = v;
             UpdateRotationCard();
         }
-        else // возвращение на исходную позицию
+        else // РІРѕР·РІСЂР°С‰РµРЅРёРµ РЅР° РёСЃС…РѕРґРЅСѓСЋ РїРѕР·РёС†РёСЋ
         {
             Vector3 v = Vector3.Lerp(rectTransform.localPosition, startPosition, returnSpeed * Time.deltaTime);
             rectTransform.localPosition = v;
@@ -108,7 +108,7 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         startMousePos = Input.mousePosition;
     }
 
-    public void OnDrag()
+    public void OnDrag() // РїРµСЂРµС‚Р°РєСЃРёРІР°РЅРёРµ РєР°СЂС‚С‹
     {
         Vector3 move = Input.mousePosition - startMousePos;
         Vector3 newPos = move + startPosition;
@@ -119,17 +119,17 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
         rectTransform.localPosition = Vector3.Lerp(rectTransform.localPosition, newPos, dragSpeed * Time.deltaTime);
 
-        // если перетащили карту вправо
+        // РµСЃР»Рё РїРµСЂРµС‚Р°С‰РёР»Рё РєР°СЂС‚Сѓ РІРїСЂР°РІРѕ
         if (rectTransform.localPosition.x >= deviationRight)
         {
-            textController.ShowText(SwipeType.Right); // показать правый текст
-            UIManager.instance.ShowCardPerformanceForCharacteristics(card, SwipeType.Right); // что будет с хар-ками
+            textController.ShowText(SwipeType.Right); // РїРѕРєР°Р·Р°С‚СЊ РїСЂР°РІС‹Р№ С‚РµРєСЃС‚
+            UIManager.instance.ShowCardPerformanceForCharacteristics(card, SwipeType.Right); // С‡С‚Рѕ Р±СѓРґРµС‚ СЃ С…Р°СЂ-РєР°РјРё
         }
-        // если карту карту влево
+        // РµСЃР»Рё РєР°СЂС‚Сѓ РєР°СЂС‚Сѓ РІР»РµРІРѕ
         else if (rectTransform.localPosition.x <= deviationLeft)
         {
-            textController.ShowText(SwipeType.Left); // показать левый текст
-            UIManager.instance.ShowCardPerformanceForCharacteristics(card, SwipeType.Left); // что будет с хар-ками
+            textController.ShowText(SwipeType.Left); // РїРѕРєР°Р·Р°С‚СЊ Р»РµРІС‹Р№ С‚РµРєСЃС‚
+            UIManager.instance.ShowCardPerformanceForCharacteristics(card, SwipeType.Left); // С‡С‚Рѕ Р±СѓРґРµС‚ СЃ С…Р°СЂ-РєР°РјРё
         }
         else
         {

@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
 
 
     /// <summary>
-    /// Свайп карты.
+    /// РЎРІР°Р№Рї РєР°СЂС‚С‹.
     /// </summary>
     public void SwipingCard(Card card, SwipeType swipeType, GameObject go)
     {
@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
 
 
     /// <summary>
-    /// Создание новой карты на игровом поле.
+    /// РЎРѕР·РґР°РЅРёРµ РЅРѕРІРѕР№ РєР°СЂС‚С‹ РЅР° РёРіСЂРѕРІРѕРј РїРѕР»Рµ.
     /// </summary>
     public void CreateNewCard()
     {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 /// <summary>
-/// Изменяет размер карт. (Под разные экраны)
+/// РР·РјРµРЅСЏРµС‚ СЂР°Р·РјРµСЂ РєР°СЂС‚. (РџРѕРґ СЂР°Р·РЅС‹Рµ СЌРєСЂР°РЅС‹)
 /// </summary>
 public class SizeCorrector : MonoBehaviour
 {

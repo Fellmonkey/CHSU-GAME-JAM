@@ -1,11 +1,11 @@
 
 
 /// <summary>
-/// Эффект на какую-либо характеристику. (Кружочек)
+/// Р­С„С„РµРєС‚ РЅР° РєР°РєСѓСЋ-Р»РёР±Рѕ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєСѓ. (В СЂСѓР¶РѕС‡РµРє)
 /// </summary>
 [System.Serializable]
 public class EffectOnCharacteristic
 {
-    public EffectOnCharacteristicController controller; // Контроллер
-    public CharacteristicType characteristicType; // Тип характеристики (деньги, ум, уважение и т.д)
+    public EffectOnCharacteristicController controller; // РљРѕРЅС‚СЂРѕР»Р»РµСЂ
+    public CharacteristicType characteristicType; // РўРёРї С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё (РґРµРЅСЊРіРё, СѓРј, СѓРІР°Р¶РµРЅРёРµ Рё С‚.Рґ)
 }

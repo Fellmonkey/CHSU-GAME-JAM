@@ -4,14 +4,14 @@ using UnityEngine;
 
 
 /// <summary>
-/// Менеджер ресурсов.
+/// РњРµРЅРµРґР¶РµСЂ СЂРµСЃСѓСЂСЃРѕРІ.
 /// </summary>
 public static class ResourcesManager
 {
     private static List<NamedSprite> sprites = new List<NamedSprite>();
 
     /// <summary>
-    /// Загружает карты из папки Resources.
+    /// Р—Р°РіСЂСѓР¶Р°РµС‚ РєР°СЂС‚С‹ РёР· РїР°РїРєРё Resources.
     /// </summary>
     public static Card[] GetCards()
     {
@@ -30,7 +30,7 @@ public static class ResourcesManager
 
 
     /// <summary>
-    /// Возвращает спрайт из папки Resources.
+    /// Р’РѕР·РІСЂР°С‰Р°РµС‚ СЃРїСЂР°Р№С‚ РёР· РїР°РїРєРё Resources.
     /// </summary>
     public static Sprite GetSprite(string name)
     {

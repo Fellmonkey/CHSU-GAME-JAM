@@ -5,23 +5,23 @@ using TMPro;
 
 
 /// <summary>
-/// Контроллер текста на карте. (+ задний фон дл¤ них)
+/// РљРѕРЅС‚СЂРѕР»Р»РµСЂ С‚РµРєСЃС‚Р° РЅР° РєР°СЂС‚Рµ. (+ Р·Р°РґРЅРёР№ С„РѕРЅ РґР»В¤ РЅРёС…)
 /// </summary>
 public class TextOnCardController : MonoBehaviour
 {
     [Header("Speed animation")]
-    [SerializeField] private float speedAnimation; // скорость анимации заднего фона (чтобы лучше читать текст)
+    [SerializeField] private float speedAnimation; // СЃРєРѕСЂРѕСЃС‚СЊ Р°РЅРёРјР°С†РёРё Р·Р°РґРЅРµРіРѕ С„РѕРЅР° (С‡С‚РѕР±С‹ Р»СѓС‡С€Рµ С‡РёС‚Р°С‚СЊ С‚РµРєСЃС‚)
 
     [Header("Objects")]
-    [SerializeField] private Transform backgroundTransform; // задний фон
-    [SerializeField] private TextMeshProUGUI textLeft; // левый текст
-    [SerializeField] private TextMeshProUGUI textRight; // правый текст
+    [SerializeField] private Transform backgroundTransform; // Р·Р°РґРЅРёР№ С„РѕРЅ
+    [SerializeField] private TextMeshProUGUI textLeft; // Р»РµРІС‹Р№ С‚РµРєСЃС‚
+    [SerializeField] private TextMeshProUGUI textRight; // РїСЂР°РІС‹Р№ С‚РµРєСЃС‚
 
     [Header("Positions")]
-    [SerializeField] private Vector3 startBackgroundPosition; // начальная позици¤ фона
-    [SerializeField] private Vector3 endBackgroundPosition; // конечная позиция фона
+    [SerializeField] private Vector3 startBackgroundPosition; // РЅР°С‡Р°Р»СЊРЅР°СЏ РїРѕР·РёС†РёВ¤ С„РѕРЅР°
+    [SerializeField] private Vector3 endBackgroundPosition; // РєРѕРЅРµС‡РЅР°СЏ РїРѕР·РёС†РёСЏ С„РѕРЅР°
 
-    private bool isShowing; // текст показываетс¤?
+    private bool isShowing; // С‚РµРєСЃС‚ РїРѕРєР°Р·С‹РІР°РµС‚СЃВ¤?
 
     private void Start()
     {
@@ -52,7 +52,7 @@ public class TextOnCardController : MonoBehaviour
 
 
     /// <summary>
-    /// Показать текст.
+    /// РџРѕРєР°Р·Р°С‚СЊ С‚РµРєСЃС‚.
     /// </summary>
     public void ShowText(SwipeType swipe)
     {
@@ -72,7 +72,7 @@ public class TextOnCardController : MonoBehaviour
 
 
     /// <summary>
-    /// Устанавливает левый текст.
+    /// РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ Р»РµРІС‹Р№ С‚РµРєСЃС‚.
     /// </summary>
     public void SetLeftText(string text)
     {
@@ -81,7 +81,7 @@ public class TextOnCardController : MonoBehaviour
 
 
     /// <summary>
-    /// Установливает правый текст.
+    /// РЈСЃС‚Р°РЅРѕРІР»РёРІР°РµС‚ РїСЂР°РІС‹Р№ С‚РµРєСЃС‚.
     /// </summary>
     public void SetRightText(string text)
     {
@@ -90,7 +90,7 @@ public class TextOnCardController : MonoBehaviour
 
 
     /// <summary>
-    /// Скрыть текст.
+    /// РЎРєСЂС‹С‚СЊ С‚РµРєСЃС‚.
     /// </summary>
     public void HideText()
     {

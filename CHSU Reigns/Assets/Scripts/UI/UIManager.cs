@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
 
 
     /// <summary>
-    /// Устанавливает основной текст карты.
+    /// РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РѕСЃРЅРѕРІРЅРѕР№ С‚РµРєСЃС‚ РєР°СЂС‚С‹.
     /// </summary>
     public void SetTitle(string text)
     {
@@ -31,25 +31,25 @@ public class UIManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Показывает, как будет влиять свайп карты на характеристики. (активирует кружочки)
+    /// РџРѕРєР°Р·С‹РІР°РµС‚, РєР°Рє Р±СѓРґРµС‚ РІР»РёСЏС‚СЊ СЃРІР°Р№Рї РєР°СЂС‚С‹ РЅР° С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё. (Р°РєС‚РёРІРёСЂСѓРµС‚ РєСЂСѓР¶РѕС‡РєРё)
     /// </summary>
     public void ShowCardPerformanceForCharacteristics(Card card, SwipeType swipeType)
     {
         for (int i = 0; i < effectsOnCharacteristics.Length; i++)
         {
-            // Влияние на данную характеристику
+            // Р’Р»РёСЏРЅРёРµ РЅР° РґР°РЅРЅСѓСЋ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєСѓ
             int effect = card.GetCharacteristic(swipeType, 
                 GameManager.instance.playerClass, 
                 effectsOnCharacteristics[i].characteristicType);
 
-            effect = Mathf.Abs(effect); // Смотрим по модулю
+            effect = Mathf.Abs(effect); // РЎРјРѕС‚СЂРёРј РїРѕ РјРѕРґСѓР»СЋ
 
-            if (effect == Characteristics.smallChange) // маленькое
+            if (effect == Characteristics.smallChange) // РјР°Р»РµРЅСЊРєРѕРµ
             {
                 effectsOnCharacteristics[i].controller.ShowEffect(
                     EffectOnCharacteristicController.EffectSizePerCharacteristic.Small);    
             }
-            else // Значительное
+            else // Р—РЅР°С‡РёС‚РµР»СЊРЅРѕРµ
             {
                 effectsOnCharacteristics[i].controller.ShowEffect(
                     EffectOnCharacteristicController.EffectSizePerCharacteristic.Large);
@@ -58,7 +58,7 @@ public class UIManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Скрывает то, как будет влиять свайп карты на характеристики. (скрывает кружочки)
+    /// РЎРєСЂС‹РІР°РµС‚ С‚Рѕ, РєР°Рє Р±СѓРґРµС‚ РІР»РёСЏС‚СЊ СЃРІР°Р№Рї РєР°СЂС‚С‹ РЅР° С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё. (СЃРєСЂС‹РІР°РµС‚ РєСЂСѓР¶РѕС‡РєРё)
     /// </summary>
     public void HideCardPerformanceForCharacteristics()
     {
