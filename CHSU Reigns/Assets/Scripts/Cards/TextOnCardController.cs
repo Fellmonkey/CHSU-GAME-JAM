@@ -5,7 +5,7 @@ using TMPro;
 
 
 /// <summary>
-///  онтроллер текста на карте. (+ задний фон дл€ них)
+///  онтроллер текста на карте. (+ задний фон дл§ них)
 /// </summary>
 public class TextOnCardController : MonoBehaviour
 {
@@ -18,10 +18,10 @@ public class TextOnCardController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textRight; // правый текст
 
     [Header("Positions")]
-    [SerializeField] private Vector3 startBackgroundPosition; // начальна€ позици€ фона
+    [SerializeField] private Vector3 startBackgroundPosition; // начальна€ позици§ фона
     [SerializeField] private Vector3 endBackgroundPosition; // конечна€ позици€ фона
 
-    private bool isShowing; // текст показываетс€?
+    private bool isShowing; // текст показываетс§?
 
     private void Start()
     {
@@ -92,7 +92,7 @@ public class TextOnCardController : MonoBehaviour
     /// <summary>
     /// —крыть текст.
     /// </summary>
-    public void HideText() 
+    public void HideText()
     {
         isShowing = false;
         textLeft.gameObject.SetActive(false);

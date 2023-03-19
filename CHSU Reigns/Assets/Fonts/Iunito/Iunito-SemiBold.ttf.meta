@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 62ad35b34e4c3f147b991147efab99ce
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Iunito
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 91c7c6b668df89b4fb0960b7d1fa8ec3, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

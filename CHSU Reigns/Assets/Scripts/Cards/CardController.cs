@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 /// <summary>
 ///  онтроллер карты, котора€ сейчас в игре.
 /// </summary>
-public class CardController : MonoBehaviour, IBeginDragHandler,  IDragHandler, IEndDragHandler
+public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public Card card { get; private set; }
 
     // —редство управлени€ текстом у карты.
-    [SerializeField] private TextOnCardController textController;
+    private TextOnCardController textController;
 
     [Header("Start card position")] // начальна€ позици€ карты
     [SerializeField] private Vector3 startPosition;
@@ -23,6 +24,7 @@ public class CardController : MonoBehaviour, IBeginDragHandler,  IDragHandler, I
     [Header("Values")] // разные значени€
     [SerializeField] private float swipingSpeed; // скорость при свайпе
     [SerializeField] private float returnSpeed; // скорость возврата к исходной позиции
+    [SerializeField] private float dragSpeed; // —корость следовани€ карты за мышкой
     [SerializeField] private float rotationCoefficent; // коэф. вращени€
 
     [Header("Maximum deviations")] // ћаксимальные отклонени€ карты (чтобы не ушла за экран)
@@ -57,6 +59,8 @@ public class CardController : MonoBehaviour, IBeginDragHandler,  IDragHandler, I
     private void Start()
     {
         rectTransform = GetComponent<RectTransform>();
+        textController = GetComponent<TextOnCardController>();
+
         rectTransform.localPosition = startPosition;
         isDragging = false;
         isSwiping = false;
@@ -68,7 +72,11 @@ public class CardController : MonoBehaviour, IBeginDragHandler,  IDragHandler, I
 
     private void Update()
     {
-        if (isSwiping)
+        if (isDragging) // перетаскивание карты
+        {
+            OnDrag();
+        }
+        else if (isSwiping) // свайп карты
         {
             Vector3 v;
 
@@ -84,7 +92,7 @@ public class CardController : MonoBehaviour, IBeginDragHandler,  IDragHandler, I
             rectTransform.localPosition = v;
             UpdateRotationCard();
         }
-        else if (!isDragging)
+        else // возвращение на исходную позицию
         {
             Vector3 v = Vector3.Lerp(rectTransform.localPosition, startPosition, returnSpeed * Time.deltaTime);
             rectTransform.localPosition = v;
@@ -92,7 +100,7 @@ public class CardController : MonoBehaviour, IBeginDragHandler,  IDragHandler, I
         }
     }
 
-    public void OnBeginDrag(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)
     {
         if (isSwiping) return;
         
@@ -100,10 +108,8 @@ public class CardController : MonoBehaviour, IBeginDragHandler,  IDragHandler, I
         startMousePos = Input.mousePosition;
     }
 
-    public void OnDrag(PointerEventData eventData)
+    public void OnDrag()
     {
-        if (isSwiping) return;
-
         Vector3 move = Input.mousePosition - startMousePos;
         Vector3 newPos = move + startPosition;
         newPos.z = startPosition.z;
@@ -111,7 +117,7 @@ public class CardController : MonoBehaviour, IBeginDragHandler,  IDragHandler, I
         newPos.x = Mathf.Clamp(newPos.x, maxDeviationLeft, maxDeviationRight);
         newPos.y = Mathf.Clamp(newPos.y, maxDeviationDown, maxDeviationUp);
 
-        rectTransform.localPosition = newPos;
+        rectTransform.localPosition = Vector3.Lerp(rectTransform.localPosition, newPos, dragSpeed * Time.deltaTime);
 
         // если перетащили карту вправо
         if (rectTransform.localPosition.x >= deviationRight)
@@ -135,13 +141,7 @@ public class CardController : MonoBehaviour, IBeginDragHandler,  IDragHandler, I
         UpdateRotationCard();
     }
 
-    private void UpdateRotationCard()
-    {
-        Vector3 newAngle = new Vector3(0,0,(rectTransform.localPosition.x - startPosition.x) * rotationCoefficent * -1);
-        rectTransform.eulerAngles = newAngle;
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
+    public void OnPointerUp(PointerEventData eventData)
     {
         isDragging = false;
         textController.HideText();
@@ -161,5 +161,11 @@ public class CardController : MonoBehaviour, IBeginDragHandler,  IDragHandler, I
 
             GameManager.instance.SwipingCard(card, swipeType, gameObject);
         }
+    }
+    
+    private void UpdateRotationCard()
+    {
+        Vector3 newAngle = new Vector3(0,0,(rectTransform.localPosition.x - startPosition.x) * rotationCoefficent * -1);
+        rectTransform.eulerAngles = newAngle;
     }
 }

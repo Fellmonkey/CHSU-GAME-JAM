@@ -8,20 +8,31 @@ using UnityEngine;
 /// </summary>
 public class EffectOnCharacteristicController : MonoBehaviour
 {
-    private static float speedAnimation = 30;
+    private static float speedAnimation = 20; // Скорость анимации
+
+    [Header("Animation positions")]
+    [SerializeField] private Vector3 startPosition;
+    [SerializeField] private Vector3 endPosition;
+
+    private Vector3 targetPosition;
+
     private RectTransform rectTransform;
-    private Vector2 newSize;
 
     private void Start()
     {
         rectTransform = GetComponent<RectTransform>();
-        HideEffect();
+        rectTransform.localPosition = startPosition;
+        targetPosition = startPosition;
     }
 
     private void Update()
     {
-        // увеличивание кружочка со временем (анимация)
-        rectTransform.sizeDelta = Vector2.Lerp(rectTransform.sizeDelta, newSize, speedAnimation * Time.deltaTime);
+        // перемещаем кружочек
+
+        Vector3 newPos = Vector3.Lerp(rectTransform.localPosition, 
+            targetPosition, speedAnimation * Time.deltaTime);
+
+        rectTransform.localPosition = newPos;
     }
 
 
@@ -30,12 +41,8 @@ public class EffectOnCharacteristicController : MonoBehaviour
     /// </summary>
     public void ShowEffect(EffectSizePerCharacteristic effect)
     {
-        newSize = new Vector2((int)effect, (int)effect); // задаем размер
-
-        if (!enabled)
-            rectTransform.sizeDelta = Vector2.zero;
-
-        gameObject.SetActive(true);
+        rectTransform.sizeDelta = new Vector2((int)effect, (int)effect); // задаем размер
+        targetPosition = endPosition; // Устанавливаем новую позицию
     }
 
 
@@ -44,8 +51,7 @@ public class EffectOnCharacteristicController : MonoBehaviour
     /// </summary>
     public void HideEffect()
     {
-        rectTransform.sizeDelta = Vector2.zero;
-        gameObject.SetActive(false);
+        targetPosition = startPosition;
     }
 
 
