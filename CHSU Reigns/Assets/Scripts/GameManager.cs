@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
             UIManager.SetDay(instance.gameDay);
         }
 
-        instance.Invoke("CreateNextCard", 0.5f); // Создаем след. карту
+        instance.Invoke("CreateNextCard", 0.35f); // Создаем след. карту
         controller.DeleteCard(2f); // через 2 сек удаляем карту
     }
 

@@ -364,6 +364,7 @@ GameObject:
   - component: {fileID: 138814495}
   - component: {fileID: 138814497}
   - component: {fileID: 138814496}
+  - component: {fileID: 138814498}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -488,6 +489,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138814494}
   m_CullTransparentMesh: 1
+--- !u!114 &138814498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138814494}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4969843b30de7e645a019e8485b018f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titleText: {fileID: 138814496}
+  speedAnimation: 8
+  newText: 
+  flagAnimation: 0
 --- !u!1 &183590746
 GameObject:
   m_ObjectHideFlags: 0
@@ -1681,7 +1698,7 @@ MonoBehaviour:
     money: 0
   playerClass: 0
   gameDay: 0
-  CardPrefab: {fileID: 7097959505314514488, guid: 641b1c2cdf1a21b4e9d54b4e8c088d9a, type: 3}
+  CardPrefab: {fileID: 8432914928867029489, guid: 641b1c2cdf1a21b4e9d54b4e8c088d9a, type: 3}
   CardHolder: {fileID: 495031225}
 --- !u!1 &667370006
 GameObject:
@@ -2318,7 +2335,7 @@ MonoBehaviour:
   knowledgeImage: {fileID: 1510492456}
   moneyImage: {fileID: 255004236}
   healthImage: {fileID: 2037221966}
-  title: {fileID: 138814496}
+  titleController: {fileID: 138814498}
   respectEffect: {fileID: 770919761}
   knowledgeEffect: {fileID: 852330876}
   moneyEffect: {fileID: 1252658834}

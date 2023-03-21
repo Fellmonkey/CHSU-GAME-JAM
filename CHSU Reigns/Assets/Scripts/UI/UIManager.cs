@@ -18,7 +18,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Image healthImage;
 
     [Header("Card holder")]
-    [SerializeField] private TextMeshProUGUI title;
+    [SerializeField] private TitleTextController titleController;
     [SerializeField] private EffectOnCharacteristicController respectEffect;
     [SerializeField] private EffectOnCharacteristicController knowledgeEffect;
     [SerializeField] private EffectOnCharacteristicController moneyEffect;
@@ -38,7 +38,7 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public static void SetTitle(string text)
     {
-        instance.title.text = text;
+        instance.titleController.SetText(text);
     }
 
     /// <summary>
