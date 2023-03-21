@@ -1681,7 +1681,7 @@ MonoBehaviour:
     money: 0
   playerClass: 0
   gameDay: 0
-  CardPrefab: {fileID: 7367888323916261952, guid: 641b1c2cdf1a21b4e9d54b4e8c088d9a, type: 3}
+  CardPrefab: {fileID: 7097959505314514488, guid: 641b1c2cdf1a21b4e9d54b4e8c088d9a, type: 3}
   CardHolder: {fileID: 495031225}
 --- !u!1 &667370006
 GameObject:
