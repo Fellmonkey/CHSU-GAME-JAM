@@ -1,5 +1,5 @@
 using System;
-using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
     
     public Sound[] musicSounds, sfxSounds, voiceSounds;
     public AudioSource musicSource, sfxSource, voiceSource;
+    public Slider musicSlider, sfxSlider;
 
     private void Awake() 
     {
@@ -68,5 +69,22 @@ public class AudioManager : MonoBehaviour
         {
             voiceSource.PlayOneShot(sound.clip);
         }
+    }
+    public void ToggleMusic()
+    {
+        musicSource.mute = !musicSource.mute;
+    }
+    public void ToggleSFX()
+    {
+        sfxSource.mute = !sfxSource.mute;
+    }
+    public void MusicVolume()
+    {
+        musicSource.volume = musicSlider.value;
+    }
+    public void SFXVolume()
+    {
+        sfxSource.volume = sfxSlider.value;
+        voiceSource.volume = sfxSlider.value;
     }
 }
