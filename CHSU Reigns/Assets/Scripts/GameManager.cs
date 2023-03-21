@@ -26,15 +26,28 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         gameCharacteristics = new Characteristics();
-        gameCharacteristics.SetDefaultValues();
+
+        if (SaveManager.CheckSavedGames()) // Есть сохраненная игра
+        {
+            SaveGame saveGame = SaveManager.LoadGame();
+
+            gameCharacteristics = saveGame.characteristics;
+            gameDay = saveGame.day;
+            playerClass = saveGame.playerClass;
+
+            CreateNextCard(saveGame.cardId);
+        }
+        else
+        {
+            gameDay = 1;
+            gameCharacteristics.SetDefaultValues();
+            CreateNextCard();
+        }
+
         UIManager.SetCharacteristics(gameCharacteristics);
-
-        gameDay = 1;
         UIManager.SetDay(gameDay);
-		
-		AudioManager.Instance.PlayVoice("voice_1"); // воспроизведение звука бла-бла-бла
 
-        CreateNextCard();
+        AudioManager.Instance.PlayVoice("voice_1"); // воспроизведение звука бла-бла-бла
     }
 
     /// <summary>
@@ -62,9 +75,29 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Создание новой карты на игровом поле.
     /// </summary>
-    public void CreateNextCard()
+    private void CreateNextCard()
     {
         CardsManager.PutNextCardIntoGame();
+        SaveGame();
+    }
+
+    /// <summary>
+    /// Создание новой карты на игровом поле (по id).
+    /// </summary>
+    private void CreateNextCard(int id)
+    {
+        CardsManager.PutNextCardIntoGame(id);
+        SaveGame();
+    }
+
+    private void SaveGame()
+    {
+        if (CardsManager.gameCard != null)
+        {
+            SaveManager.SaveGame(
+                new SaveGame(playerClass, gameDay, CardsManager.gameCard.id, gameCharacteristics)
+            );
+        }
     }
 
     /// <summary>

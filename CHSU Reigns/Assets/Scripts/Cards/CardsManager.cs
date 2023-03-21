@@ -124,5 +124,33 @@ public static class CardsManager
         go.GetComponent<CardController>().InitCard(nextCard);
         gameCard = nextCard;
     }
+
+    /// <summary>
+    /// Вводит карту в игру (по id).
+    /// </summary>
+    public static void PutNextCardIntoGame(int id)
+    {
+        Card card = null;
+
+        for (int i = 0; i < cards.Length; i++)
+        {
+            if (cards[i].id == id)
+            {
+                card = cards[i];
+                break;
+            }
+        }
+
+        if (card == null)
+        {
+            PutNextCardIntoGame();
+            return;
+        }
+
+        GameObject go = Object.Instantiate(GameManager.GetCardPrefab(), Vector3.zero,
+            Quaternion.identity, GameManager.GetCardHolder());
+        go.GetComponent<CardController>().InitCard(card);
+        gameCard = card;
+    }
 }
 
