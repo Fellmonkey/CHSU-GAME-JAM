@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 79d15427d1f806b4caf2686ff9219274
+guid: 442f63f8d43a87741bceacc3e6b881ed
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Balkara Free Condensed - npoekmu.me
+  - KardinalPro
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
