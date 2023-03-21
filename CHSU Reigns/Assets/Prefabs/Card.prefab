@@ -75,8 +75,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4289248195
-  m_fontColor: {r: 0.7647059, g: 0.73333335, b: 0.65882355, a: 1}
+    rgba: 4294637250
+  m_fontColor: {r: 0.7607843, g: 0.9647059, b: 0.98039216, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &2512123367723806208
@@ -288,8 +288,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4289248195
-  m_fontColor: {r: 0.7647059, g: 0.73333335, b: 0.65882355, a: 1}
+    rgba: 4294637250
+  m_fontColor: {r: 0.7607843, g: 0.9647059, b: 0.98039216, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -448,7 +448,7 @@ MonoBehaviour:
   swipePositionLeft: {x: -1000, y: -300, z: 0}
   swipingSpeed: 5
   returnSpeed: 10
-  dragSpeed: 5
+  dragSpeed: 8
   rotationCoefficent: 0.04
   maxDeviationRight: 160
   maxDeviationLeft: -160

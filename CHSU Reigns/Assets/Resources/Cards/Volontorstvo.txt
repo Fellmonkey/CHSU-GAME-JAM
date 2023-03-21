@@ -1,0 +1,55 @@
+{
+    "name": "",
+    "next": "",
+
+    "firstDayCard": false,
+	
+    "title": "Нужна помощь в организации мероприятия. Поможешь?",
+    "day": 0,
+    "backgroundImageName": "",
+    "cardImageName": "",
+	
+    "swipe_left": {
+        "text": "Ну если нужна",
+        "genius": {
+            "respect": 2,
+            "knowledge": 0,
+            "health": -2,
+            "money": 0
+        },
+        "psychologist": {
+            "respect": 2,
+            "knowledge": 0,
+            "health": -2,
+            "money": 0
+        },
+        "sportsman": {
+            "respect": 2,
+            "knowledge": 0,
+            "health": -2,
+            "money": 0
+        }
+    },
+	
+    "swipe_right": {
+        "text": "Извините, у меня планы",
+        "genius": {
+            "respect": -1,
+            "knowledge": 1,
+            "health": 2,
+            "money": 0
+        },
+        "psychologist": {
+            "respect": -1,
+            "knowledge": 0,
+            "health": 2,
+            "money": 0
+        },
+        "sportsman": {
+            "respect": -1,
+            "knowledge": 1,
+            "health": 1,
+            "money": 0
+        }
+    }
+}

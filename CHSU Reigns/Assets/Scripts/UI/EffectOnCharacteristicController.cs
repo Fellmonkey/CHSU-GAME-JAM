@@ -15,7 +15,6 @@ public class EffectOnCharacteristicController : MonoBehaviour
     [SerializeField] private Vector3 endPosition;
 
     private Vector3 targetPosition;
-
     private RectTransform rectTransform;
 
     private void Start()

@@ -7,7 +7,6 @@ using UnityEngine;
 /// </summary>
 public static class CardsManager
 {
-
     /// <summary>
     /// Карта, которая сейчас в игре.
     /// </summary>
@@ -27,7 +26,6 @@ public static class CardsManager
     /// Случайные карты.
     /// </summary>
     public static Card[] randomCards { private set; get; }
-
 
     /// <summary>
     /// Загружает карты.
@@ -53,38 +51,78 @@ public static class CardsManager
     /// <summary>
     /// Возвращает случайную карту (не дневную).
     /// </summary>
-    /// <returns></returns>
-    public static Card GetRandomCard()
+    private static Card GetRandomCard()
     {
         int rand = UnityEngine.Random.Range(0, randomCards.Length);
         return randomCards[rand];
     }
 
     /// <summary>
-    /// Ищет карту, которая связана с полученным днем.
+    /// Возвращает карту по имени.
     /// </summary>
-    /// <returns>Возвращает эту карту, если она найдена, иначе null.</returns>
-    public static Card CheckTheDayCard(int day)
+    private static Card GetCard(string name)
     {
-        for (int i = 0; i < eventCards.Length; i++)
+        for (int i = 0; i < cards.Length; i++)
         {
-            if (eventCards[i].day == day)
-                return eventCards[i];
+            if (cards[i].name == name)
+                return cards[i];
         }
 
         return null;
     }
 
     /// <summary>
-    /// Вводит полученную карту в игру.
+    /// Ищет карту, которая связана с полученным днем.
     /// </summary>
-    /// <param name="card"></param>
-    public static void PutCardIntoGame(Card card, GameObject cardPrefab, Transform cardHolder)
+    /// <returns>Возвращает эту карту, если она найдена, иначе null.</returns>
+    private static Card CheckTheDayCard(int day)
     {
-        GameObject go = Object.Instantiate(cardPrefab, Vector3.zero, 
-            Quaternion.identity, cardHolder);
-        go.GetComponent<CardController>().InitCard(card);
-        gameCard = card;
+        List<Card> eCards = new List<Card>(); // все карты относящиеся к данному дню
+
+        for (int i = 0; i < eventCards.Length; i++)
+        {
+            if (eventCards[i].day == day)
+                eCards.Add(cards[i]);
+        }
+
+        // Ищем первую карту данного дня.
+        
+        for (int i = 0; i < eCards.Count; i++)
+        {
+            if (eCards[i].firstDayCard)
+            {
+                return eCards[i];
+            }
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    /// Вводит следующую карту в игру.
+    /// </summary>
+    public static void PutNextCardIntoGame()
+    {
+        Card nextCard;
+
+        if(gameCard != null && gameCard.next.Length > 0) // след. карта
+        {
+            nextCard = GetCard(gameCard.next);
+        }
+        else
+        {
+            nextCard = CheckTheDayCard(GameManager.GetGameDay()); // ищем дневную
+
+            if (nextCard == null) // если дневной нет, то берем случайную
+            {
+                nextCard = GetRandomCard();
+            }
+        }
+
+        GameObject go = Object.Instantiate(GameManager.GetCardPrefab(), Vector3.zero, 
+            Quaternion.identity, GameManager.GetCardHolder());
+        go.GetComponent<CardController>().InitCard(nextCard);
+        gameCard = nextCard;
     }
 }
 

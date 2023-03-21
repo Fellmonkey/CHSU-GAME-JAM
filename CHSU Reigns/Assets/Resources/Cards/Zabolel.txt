@@ -1,0 +1,55 @@
+{
+    "name": "",
+    "next": "",
+
+    "firstDayCard": false,
+	
+    "title": "Что-то ты бледный какой-то... Ты пойдёшь сегодня в ВУЗ?",
+    "day": 0,
+    "backgroundImageName": "",
+    "cardImageName": "",
+	
+    "swipe_left": {
+        "text": "Надо бы сходить",
+        "genius": {
+            "respect": 0,
+            "knowledge": 2,
+            "health": -1,
+            "money": 0
+        },
+        "psychologist": {
+            "respect": 2,
+            "knowledge": 1,
+            "health": -2,
+            "money": 0
+        },
+        "sportsman": {
+            "respect": 1,
+            "knowledge": 0,
+            "health": 0,
+            "money": 0
+        }
+    },
+	
+    "swipe_right": {
+        "text": "Останусь в общаге",
+        "genius": {
+            "respect": -2,
+            "knowledge": 0,
+            "health": 0,
+            "money": 0
+        },
+        "psychologist": {
+            "respect": 0,
+            "knowledge": -1,
+            "health": -1,
+            "money": 0
+        },
+        "sportsman": {
+            "respect": -1,
+            "knowledge": -2,
+            "health": 1,
+            "money": 0
+        }
+    }
+}

@@ -1,20 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-using System;
-using Unity.VisualScripting;
-using static EffectOnCharacteristic;
+
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    private static GameManager instance;
 
-    // Game characteristics
-    public Characteristics gameCharacteristics { get; private set; }
-    public PlayerClass playerClass { get; private set; }
-    public int gameDay { get; private set; }
-
+    [Header("Game characteristics")] 
+    [SerializeField] private Characteristics gameCharacteristics; // хар-ки
+    [SerializeField] private PlayerClass playerClass; // Класс игрока
+    [SerializeField] private int gameDay; // Игровой день.
 
     [Header("Card prefab")]
     [SerializeField] private GameObject CardPrefab;
@@ -25,36 +19,85 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
-        {
-            instance = this;
-        }
-        
+        instance = this;
         CardsManager.LoadCards();
     }
 
-    public void Start()
+    private void Start()
     {
-        AudioManager.Instance.PlayVoice("voice_1"); // воспроизведение звука бла-бла-бла
-        CreateNewCard();
-    }
+        gameCharacteristics = new Characteristics();
+        gameCharacteristics.SetDefaultValues();
+        UIManager.SetCharacteristics(gameCharacteristics);
 
+        gameDay = 1;
+        UIManager.SetDay(gameDay);
+		
+		AudioManager.Instance.PlayVoice("voice_1"); // воспроизведение звука бла-бла-бла
+
+        CreateNextCard();
+    }
 
     /// <summary>
     /// Свайп карты.
     /// </summary>
-    public void SwipingCard(Card card, SwipeType swipeType, GameObject go)
+    public static void SwipingCard(CardController controller, SwipeType swipe)
     {
-        Destroy(go, 2);
-        Invoke("CreateNewCard", 0.5f);
-    }
+        Card card = controller.card;
 
+        instance.gameCharacteristics.AddCharacteristics(
+            card.GetCharacteristic(swipe, instance.playerClass), true);
+
+        UIManager.SetCharacteristics(instance.gameCharacteristics);
+
+        if (card.next.Length == 0) // нет след. карты -> + день
+        {
+            instance.gameDay++;
+            UIManager.SetDay(instance.gameDay);
+        }
+
+        instance.Invoke("CreateNextCard", 0.5f); // Создаем след. карту
+        controller.DeleteCard(2f); // через 2 сек удаляем карту
+    }
 
     /// <summary>
     /// Создание новой карты на игровом поле.
     /// </summary>
-    public void CreateNewCard()
+    public void CreateNextCard()
     {
-        CardsManager.PutCardIntoGame(CardsManager.GetRandomCard(), CardPrefab, CardHolder);
+        CardsManager.PutNextCardIntoGame();
+    }
+
+    /// <summary>
+    /// Возвращает харакеристики игры.
+    /// </summary>
+    public static Characteristics GetCharacteristics()
+    {
+        return instance.gameCharacteristics;
+    }
+
+    /// <summary>
+    /// Возвращает класс игрока.
+    /// </summary>
+    public static PlayerClass GetPlayerClass()
+    {
+        return instance.playerClass;
+    }
+
+    /// <summary>
+    /// Возвращает игровой день.
+    /// </summary>
+    public static int GetGameDay()
+    {
+        return instance.gameDay;
+    }
+
+    public static GameObject GetCardPrefab()
+    {
+        return instance.CardPrefab;
+    }
+
+    public static Transform GetCardHolder()
+    {
+        return instance.CardHolder;
     }
 }

@@ -5,7 +5,7 @@ using TMPro;
 
 
 /// <summary>
-/// Контроллер текста на карте. (+ задний фон дл¤ них)
+/// Контроллер текста на карте. (+ задний фон для них)
 /// </summary>
 public class TextOnCardController : MonoBehaviour
 {
@@ -21,7 +21,7 @@ public class TextOnCardController : MonoBehaviour
     [SerializeField] private Vector3 startBackgroundPosition; // начальная позици¤ фона
     [SerializeField] private Vector3 endBackgroundPosition; // конечная позиция фона
 
-    private bool isShowing; // текст показываетс¤?
+    private bool isShowing; // текст показывается?
 
     private void Start()
     {
@@ -50,7 +50,6 @@ public class TextOnCardController : MonoBehaviour
         textRight.gameObject.transform.rotation = Quaternion.identity;
     }
 
-
     /// <summary>
     /// Показать текст.
     /// </summary>
@@ -70,7 +69,6 @@ public class TextOnCardController : MonoBehaviour
         }
     }
 
-
     /// <summary>
     /// Устанавливает левый текст.
     /// </summary>
@@ -79,7 +77,6 @@ public class TextOnCardController : MonoBehaviour
         textLeft.text = text;
     }
 
-
     /// <summary>
     /// Установливает правый текст.
     /// </summary>
@@ -87,7 +84,6 @@ public class TextOnCardController : MonoBehaviour
     {
         textRight.text = text;
     }
-
 
     /// <summary>
     /// Скрыть текст.

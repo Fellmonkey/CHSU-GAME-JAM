@@ -6,7 +6,13 @@
 public class Card
 {
     private static int _id = 0;
+
     public readonly int id; // ид 
+
+    public string name; // название карты
+    public string next; // следующая карта (имя)
+
+    public bool firstDayCard; // В этот день - это первая карта
 
     public string title; // заголовок
     public int day; // день
@@ -19,6 +25,8 @@ public class Card
     public Card()
     {
         id = _id++;
+        name = "";
+        next = "";
         swipe_left = new Swipe();
         swipe_right = new Swipe();
     }

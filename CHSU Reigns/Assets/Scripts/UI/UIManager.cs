@@ -2,69 +2,118 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.UI;
 
 /// <summary>
 /// UI manager.
 /// </summary>
 public class UIManager : MonoBehaviour
 {
-    public static UIManager instance;
+    private static UIManager instance;
+
+    [Header("Characteristics")]
+    [SerializeField] private Image respectImage;
+    [SerializeField] private Image knowledgeImage;
+    [SerializeField] private Image moneyImage;
+    [SerializeField] private Image healthImage;
 
     [Header("Card holder")]
     [SerializeField] private TextMeshProUGUI title;
-    [SerializeField] private EffectOnCharacteristic[] effectsOnCharacteristics;
+    [SerializeField] private EffectOnCharacteristicController respectEffect;
+    [SerializeField] private EffectOnCharacteristicController knowledgeEffect;
+    [SerializeField] private EffectOnCharacteristicController moneyEffect;
+    [SerializeField] private EffectOnCharacteristicController healthEffect;
 
+    [Header("Texts")]
+    [SerializeField] private TextMeshProUGUI day;
+    [SerializeField] private TextMeshProUGUI namePlayer;
 
-    private void Start()
+    private void Awake()
     {
         instance = this;
     }
 
-
     /// <summary>
     /// Устанавливает основной текст карты.
     /// </summary>
-    public void SetTitle(string text)
+    public static void SetTitle(string text)
     {
-        title.text = text;
+        instance.title.text = text;
     }
 
     /// <summary>
     /// Показывает, как будет влиять свайп карты на характеристики. (активирует кружочки)
     /// </summary>
-    public void ShowCardPerformanceForCharacteristics(Card card, SwipeType swipeType)
+    public static void ShowCardPerformanceForCharacteristics(Card card, SwipeType swipeType)
     {
-        for (int i = 0; i < effectsOnCharacteristics.Length; i++)
+        PlayerClass playerClass = GameManager.GetPlayerClass();
+
+        void performanceForCharacteristics(
+            EffectOnCharacteristicController controller, CharacteristicType type)
         {
             // Влияние на данную характеристику
-            int effect = card.GetCharacteristic(swipeType, 
-                GameManager.instance.playerClass, 
-                effectsOnCharacteristics[i].characteristicType);
+            int effect = card.GetCharacteristic(swipeType, playerClass, type);
+
+            if (effect == 0)
+            {
+                return;
+            }
 
             effect = Mathf.Abs(effect); // Смотрим по модулю
 
             if (effect == Characteristics.smallChange) // маленькое
             {
-                effectsOnCharacteristics[i].controller.ShowEffect(
-                    EffectOnCharacteristicController.EffectSizePerCharacteristic.Small);    
+                controller.ShowEffect(
+                    EffectOnCharacteristicController.EffectSizePerCharacteristic.Small);
             }
             else // Значительное
             {
-                effectsOnCharacteristics[i].controller.ShowEffect(
+                controller.ShowEffect(
                     EffectOnCharacteristicController.EffectSizePerCharacteristic.Large);
             }
         }
+
+        performanceForCharacteristics(instance.respectEffect, CharacteristicType.respect);
+        performanceForCharacteristics(instance.knowledgeEffect, CharacteristicType.knowledge);
+        performanceForCharacteristics(instance.healthEffect, CharacteristicType.health);
+        performanceForCharacteristics(instance.moneyEffect, CharacteristicType.money);
     }
 
     /// <summary>
     /// Скрывает то, как будет влиять свайп карты на характеристики. (скрывает кружочки)
     /// </summary>
-    public void HideCardPerformanceForCharacteristics()
+    public static void HideCardPerformanceForCharacteristics()
     {
-        for (int i = 0; i < effectsOnCharacteristics.Length; i++)
-        {
-            effectsOnCharacteristics[i].controller.HideEffect();
-        }
+        instance.respectEffect.HideEffect();
+        instance.knowledgeEffect.HideEffect();
+        instance.healthEffect.HideEffect();
+        instance.moneyEffect.HideEffect();
+    }
+
+    /// <summary>
+    /// Устанавливает день.
+    /// </summary>
+    public static void SetDay(int day)
+    {
+        instance.day.text = "День " +  day.ToString();
+    }
+
+    /// <summary>
+    /// Устанавливает имя.
+    /// </summary>
+    public static void SetNamePlayer(string name)
+    {
+        instance.namePlayer.text = name;
+    }
+
+    /// <summary>
+    /// Устанавливает характеристики.
+    /// </summary>
+    public static void SetCharacteristics(Characteristics characteristics)
+    {
+        instance.respectImage.fillAmount = (float)characteristics.respect / Characteristics.maxValue;
+        instance.knowledgeImage.fillAmount = (float)characteristics.knowledge / Characteristics.maxValue;
+        instance.healthImage.fillAmount = (float)characteristics.health / Characteristics.maxValue;
+        instance.moneyImage.fillAmount = (float)characteristics.money / Characteristics.maxValue;
     }
 }

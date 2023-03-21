@@ -1,0 +1,55 @@
+{
+    "name": "",
+    "next": "",
+
+    "firstDayCard": false,
+	
+    "title": "Будешь права получать?",
+    "day": 0,
+    "backgroundImageName": "",
+    "cardImageName": "",
+	
+    "swipe_left": {
+        "text": "Да",
+        "genius": {
+            "respect": 1,
+            "knowledge": 0,
+            "health": 0,
+            "money": -2
+        },
+        "psychologist": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": 1,
+            "money": -2
+        },
+        "sportsman": {
+            "respect": 0,
+            "knowledge": 1,
+            "health": 0,
+            "money": -2
+        }
+    },
+	
+    "swipe_right": {
+        "text": "В следующем семестре",
+        "genius": {
+            "respect": -1,
+            "knowledge": 0,
+            "health": 0,
+            "money": 0
+        },
+        "psychologist": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": -1,
+            "money": 0
+        },
+        "sportsman": {
+            "respect": 0,
+            "knowledge": -1,
+            "health": 0,
+            "money": 0
+        }
+    }
+}

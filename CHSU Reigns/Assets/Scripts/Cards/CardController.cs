@@ -51,7 +51,6 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     /// <summary>
     /// Инициализация карты.
     /// </summary>
-    /// <param name="card"></param>
     public void InitCard(Card card)
     {
         this.card = card;
@@ -66,7 +65,7 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         isDragging = false;
         isSwiping = false;
 
-        UIManager.instance.SetTitle(card.title); // Ставим текст
+        UIManager.SetTitle(card.title); // Ставим текст
         textController.SetLeftText(card.swipe_left.text);
         textController.SetRightText(card.swipe_right.text);
     }
@@ -91,14 +90,14 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
             }
 
             rectTransform.localPosition = v;
-            UpdateRotationCard();
         }
         else // возвращение на исходную позицию
         {
             Vector3 v = Vector3.Lerp(rectTransform.localPosition, startPosition, returnSpeed * Time.deltaTime);
             rectTransform.localPosition = v;
-            UpdateRotationCard();
         }
+        
+        UpdateRotationCard();
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -124,21 +123,21 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         if (rectTransform.localPosition.x >= deviationRight)
         {
             textController.ShowText(SwipeType.Right); // показать правый текст
-            UIManager.instance.ShowCardPerformanceForCharacteristics(card, SwipeType.Right); // что будет с хар-ками
-            if(checkSound)
+            UIManager.ShowCardPerformanceForCharacteristics(card, SwipeType.Right); // что будет с хар-ками
+
+            if (checkSound)
             {
                 checkSound = false;
                 AudioManager.Instance.PlaySFX("clockRight"); // воспроизведение звука 
             }
-                
-
         }
         // если карту карту влево
         else if (rectTransform.localPosition.x <= deviationLeft)
         {
             textController.ShowText(SwipeType.Left); // показать левый текст
-            UIManager.instance.ShowCardPerformanceForCharacteristics(card, SwipeType.Left); // что будет с хар-ками
-            if(checkSound)
+            UIManager.ShowCardPerformanceForCharacteristics(card, SwipeType.Left); // что будет с хар-ками
+
+            if (checkSound)
             {
                 checkSound = false;
                 AudioManager.Instance.PlaySFX("clockLeft"); // воспроизведение звука 
@@ -147,42 +146,45 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         else
         {
             textController.HideText();
-            UIManager.instance.HideCardPerformanceForCharacteristics();
+            UIManager.HideCardPerformanceForCharacteristics();
             checkSound = true;
         }
-            
-            
-        UpdateRotationCard();
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         isDragging = false;
         textController.HideText();
-        UIManager.instance.HideCardPerformanceForCharacteristics();
+        UIManager.HideCardPerformanceForCharacteristics();
 
         if (rectTransform.localPosition.x >= deviationRight)
         {
             swipeType = SwipeType.Right;
             isSwiping = true;
 
-            GameManager.instance.SwipingCard(card, swipeType, gameObject);
-            AudioManager.Instance.PlaySFX("newCard"); // воспроизведение звука появления новой карты
+            GameManager.SwipingCard(this, swipeType);
         }
         else if (rectTransform.localPosition.x <= deviationLeft)
         {
             swipeType = SwipeType.Left;
             isSwiping = true;
 
-            GameManager.instance.SwipingCard(card, swipeType, gameObject);
-            AudioManager.Instance.PlaySFX("newCard"); // воспроизведение звука появления новой карты
+            GameManager.SwipingCard(this, swipeType);
         }
-        
     }
     
     private void UpdateRotationCard()
     {
         Vector3 newAngle = new Vector3(0,0,(rectTransform.localPosition.x - startPosition.x) * rotationCoefficent * -1);
         rectTransform.eulerAngles = newAngle;
+    }
+
+    /// <summary>
+    /// Удалить карту.
+    /// </summary>
+    /// <param name="time">Время, через которое карта удалится</param>
+    public void DeleteCard(float time = 0)
+    {
+        Destroy(gameObject, time);
     }
 }
