@@ -25,12 +25,17 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if(instance == null)
+        {
+            instance = this;
+        }
+        
         CardsManager.LoadCards();
     }
 
     public void Start()
     {
+        AudioManager.Instance.PlayVoice("voice_1"); // воспроизведение звука бла-бла-бла
         CreateNewCard();
     }
 

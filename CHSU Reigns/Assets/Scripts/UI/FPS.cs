@@ -12,6 +12,6 @@ public class FPS : MonoBehaviour
     void Update()
     {
         float fps = 1.0f / Time.deltaTime;
-        this.fps.text = fps.ToString();
+        this.fps.text = fps.ToString("F2");
     }
 }

@@ -46,6 +46,7 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     [SerializeField] private bool isDragging; // перетаскиваем
     [SerializeField] private bool isSwiping; // карту свайпнули
 
+    private bool checkSound; // флаг 
 
     /// <summary>
     /// Инициализация карты.
@@ -124,17 +125,30 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         {
             textController.ShowText(SwipeType.Right); // показать правый текст
             UIManager.instance.ShowCardPerformanceForCharacteristics(card, SwipeType.Right); // что будет с хар-ками
+            if(checkSound)
+            {
+                checkSound = false;
+                AudioManager.Instance.PlaySFX("clockRight"); // воспроизведение звука 
+            }
+                
+
         }
         // если карту карту влево
         else if (rectTransform.localPosition.x <= deviationLeft)
         {
             textController.ShowText(SwipeType.Left); // показать левый текст
             UIManager.instance.ShowCardPerformanceForCharacteristics(card, SwipeType.Left); // что будет с хар-ками
+            if(checkSound)
+            {
+                checkSound = false;
+                AudioManager.Instance.PlaySFX("clockLeft"); // воспроизведение звука 
+            }
         }
         else
         {
             textController.HideText();
             UIManager.instance.HideCardPerformanceForCharacteristics();
+            checkSound = true;
         }
             
             
@@ -153,6 +167,7 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
             isSwiping = true;
 
             GameManager.instance.SwipingCard(card, swipeType, gameObject);
+            AudioManager.Instance.PlaySFX("newCard"); // воспроизведение звука появления новой карты
         }
         else if (rectTransform.localPosition.x <= deviationLeft)
         {
@@ -160,7 +175,9 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
             isSwiping = true;
 
             GameManager.instance.SwipingCard(card, swipeType, gameObject);
+            AudioManager.Instance.PlaySFX("newCard"); // воспроизведение звука появления новой карты
         }
+        
     }
     
     private void UpdateRotationCard()
