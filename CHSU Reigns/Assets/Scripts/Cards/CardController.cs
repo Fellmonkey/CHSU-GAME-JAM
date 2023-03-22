@@ -81,6 +81,7 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         textController.SetLeftText(card.swipe_left.text);
         textController.SetRightText(card.swipe_right.text);
 
+        animatorCard.Play();
     }
 
     private void Update()
@@ -246,6 +247,7 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
             UIManager.SetNameSpeaking("");
         }
     }
+
     /// <summary>
     /// Удалить карту.
     /// </summary>
