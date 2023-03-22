@@ -53,7 +53,6 @@ public class EffectOnCharacteristicController : MonoBehaviour
         targetPosition = startPosition;
     }
 
-
     /// <summary>
     /// Размер влияния на характеристику. (размер кружочка)
     /// </summary>

@@ -27,7 +27,9 @@ public class AudioManager : MonoBehaviour
     {
         PlayMusic("reigns");
     }
-
+    /// <summary>
+    /// Воспроизвдение музыки
+    /// </summary>
     public void PlayMusic(string name)
     {
         Sound sound = Array.Find(musicSounds, x => x.nameSound == name);
@@ -44,6 +46,9 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Воспроизведение звуков
+    /// </summary>
     public void PlaySFX(string name)
     {
         Sound sound = Array.Find(sfxSounds, x => x.nameSound == name);
@@ -57,6 +62,9 @@ public class AudioManager : MonoBehaviour
             sfxSource.PlayOneShot(sound.clip);
         }
     }
+    /// <summary>
+    /// Воспроизведение голоса персонажа
+    /// </summary>
     public void PlayVoice(string name)
     {
         Sound sound = Array.Find(voiceSounds, x => x.nameSound == name);
@@ -70,18 +78,31 @@ public class AudioManager : MonoBehaviour
             voiceSource.PlayOneShot(sound.clip);
         }
     }
+    /// <summary>
+    /// Мьютим музыку (используется в UI)
+    /// </summary>
     public void ToggleMusic()
     {
         musicSource.mute = !musicSource.mute;
     }
+    /// <summary>
+    /// Мьютим звуки (используется в UI)
+    /// </summary>
     public void ToggleSFX()
     {
         sfxSource.mute = !sfxSource.mute;
+        voiceSource.mute = !voiceSource.mute;
     }
+    /// <summary>
+    /// Изменяем громкость музыки (используется в UI)
+    /// </summary>
     public void MusicVolume()
     {
         musicSource.volume = musicSlider.value;
     }
+    /// <summary>
+    /// Изменяем громкость звуков (используется в UI)
+    /// </summary>
     public void SFXVolume()
     {
         sfxSource.volume = sfxSlider.value;

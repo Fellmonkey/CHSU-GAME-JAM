@@ -79,7 +79,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: faithEffectGrow
+  m_Name: respectEffectGrow
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -106,7 +106,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: faithEffectFall
+  m_Name: respectEffectFall
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -132,7 +132,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Faith icon
+  m_Name: respect icon
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
@@ -155,7 +155,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: faithEffectHidden
+  m_Name: respectEffectHidden
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []

@@ -163,6 +163,8 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
             isSwiping = true;
 
             GameManager.SwipingCard(this, swipeType);
+            UIManager.ShowAnimation(card, swipeType);
+            AudioManager.Instance.PlaySFX("newCard");
         }
         else if (rectTransform.localPosition.x <= deviationLeft)
         {
@@ -170,6 +172,8 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
             isSwiping = true;
 
             GameManager.SwipingCard(this, swipeType);
+            UIManager.ShowAnimation(card, swipeType);
+            AudioManager.Instance.PlaySFX("newCard");
         }
     }
     

@@ -2342,6 +2342,11 @@ MonoBehaviour:
   healthEffect: {fileID: 789809896}
   day: {fileID: 2044785506}
   namePlayer: {fileID: 703385456}
+  characteristicsEffect:
+  - {fileID: 1642095845}
+  - {fileID: 2008680897}
+  - {fileID: 1684328805}
+  - {fileID: 223159823}
 --- !u!1 &976621331
 GameObject:
   m_ObjectHideFlags: 0
@@ -3527,7 +3532,7 @@ Animator:
   m_GameObject: {fileID: 1642095841}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b7e43d23e731b9548a34eec070087645, type: 2}
+  m_Controller: {fileID: 9100000, guid: 487d22c26e500ef459fcc2cd93ffdeb3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3627,7 +3632,7 @@ Animator:
   m_GameObject: {fileID: 1684328801}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 487d22c26e500ef459fcc2cd93ffdeb3, type: 2}
+  m_Controller: {fileID: 9100000, guid: b7e43d23e731b9548a34eec070087645, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

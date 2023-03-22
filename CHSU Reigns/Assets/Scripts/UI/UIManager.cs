@@ -28,6 +28,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI day;
     [SerializeField] private TextMeshProUGUI namePlayer;
 
+    [Header("Animation")]
+    [SerializeField] private Animator[] characteristicsEffect;
     private void Awake()
     {
         instance = this;
@@ -48,8 +50,7 @@ public class UIManager : MonoBehaviour
     {
         PlayerClass playerClass = GameManager.GetPlayerClass();
 
-        void performanceForCharacteristics(
-            EffectOnCharacteristicController controller, CharacteristicType type)
+        void performanceForCharacteristics(EffectOnCharacteristicController controller, CharacteristicType type)
         {
             // Влияние на данную характеристику
             int effect = card.GetCharacteristic(swipeType, playerClass, type);
@@ -115,5 +116,39 @@ public class UIManager : MonoBehaviour
         instance.knowledgeImage.fillAmount = (float)characteristics.knowledge / Characteristics.maxValue;
         instance.healthImage.fillAmount = (float)characteristics.health / Characteristics.maxValue;
         instance.moneyImage.fillAmount = (float)characteristics.money / Characteristics.maxValue;
+    }
+        public void ShowAnimation(SwipeType swipeType, CharacteristicType characteristicType)
+    {
+
+    }
+    /// <summary>
+    /// Показывает анимацию роста или падения характеристик.
+    /// </summary>
+    public static void ShowAnimation(Card card, SwipeType swipeType)
+    {
+        void performanceForCharacteristics(int numberAnimation, string nameAnimation ,CharacteristicType type)
+        {
+            // Влияние на данную характеристику
+            int effect = card.GetCharacteristic(swipeType,default, type);
+
+            if (effect == 0)
+            {
+                return;
+            }
+                if (effect < 0)
+                {
+                    Debug.Log("работает?");
+                    instance.characteristicsEffect[numberAnimation].Play($"{nameAnimation}EffectFall");
+                }
+                else if (effect > 0)
+                {
+                    instance.characteristicsEffect[numberAnimation].Play($"{nameAnimation}EffectGrow");
+                }        
+        }
+
+        performanceForCharacteristics(0,"respect",CharacteristicType.respect);
+        performanceForCharacteristics(1,"knowledge",CharacteristicType.knowledge);
+        performanceForCharacteristics(2,"health",CharacteristicType.health);
+        performanceForCharacteristics(3,"money",CharacteristicType.money);
     }
 }
