@@ -1,6 +1,5 @@
 {
     "name": "Kurator",
-    "next": "Tusa",
 
     "firstDayCard": false,
 
@@ -12,6 +11,7 @@
     "cardImageName": "",
 	
     "swipe_left": {
+"next": "Tusa",
         "text": "Вызваться первым",
         "genius": {
             "respect": 1,
@@ -34,6 +34,7 @@
     },
 	
     "swipe_right": {
+"next": "Tusa",
         "text": "Ждать своей очереди",
         "genius": {
             "respect": 0,

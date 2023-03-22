@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -16,6 +17,8 @@ public class GameManager : MonoBehaviour
     [Header("Card holder")]
     [SerializeField] private Transform CardHolder;
 
+    // Тип свайпа последней карты
+    private SwipeType swipeType;
 
     private void Awake()
     {
@@ -62,10 +65,25 @@ public class GameManager : MonoBehaviour
 
         UIManager.SetCharacteristics(instance.gameCharacteristics);
 
-        if (card.next.Length == 0) // нет след. карты -> + день
+        instance.swipeType = swipe;
+
+        if (swipe == SwipeType.Left)
         {
-            instance.gameDay++;
-            UIManager.SetDay(instance.gameDay);
+            if (card.swipe_left.next.Length == 0) // нет след. карты -> + день
+            {
+                instance.gameDay++;
+                UIManager.SetDay(instance.gameDay);
+            }
+            // иначе создастся некст карта
+        }
+        else
+        {
+            if (card.swipe_right.next.Length == 0) // нет след. карты -> + день
+            {
+                instance.gameDay++;
+                UIManager.SetDay(instance.gameDay);
+            }
+            // иначе создастся некст карта
         }
 
         instance.Invoke("CreateNextCard", 0.35f); // Создаем след. карту
@@ -132,5 +150,10 @@ public class GameManager : MonoBehaviour
     public static Transform GetCardHolder()
     {
         return instance.CardHolder;
+    }
+
+    public static SwipeType GetSwipeLastCard()
+    {
+        return instance.swipeType;
     }
 }

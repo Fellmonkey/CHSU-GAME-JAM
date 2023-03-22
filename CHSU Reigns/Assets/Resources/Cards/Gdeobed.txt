@@ -1,9 +1,6 @@
 {
     "name": "",
-    "next": "",
-	
     "firstDayCard": false,
-
     "speakingName": "ноунейм",
 	
     "title": "Кафе или столовая?",
@@ -12,6 +9,7 @@
     "cardImageName": "",
 	
     "swipe_left": {
+        "next": "",
         "text": "Кафе",
         "genius": {
             "respect": 0,
@@ -34,6 +32,7 @@
     },
 	
     "swipe_right": {
+        "next": "",
         "text": "Столовая",
         "genius": {
             "respect": 0,

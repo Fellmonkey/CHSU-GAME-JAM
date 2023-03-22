@@ -1,6 +1,5 @@
 {
     "name": "",
-    "next": "",
 
     "firstDayCard": false,
 
@@ -12,6 +11,7 @@
     "cardImageName": "",
 	
     "swipe_left": {
+    "next": "",
         "text": "Да",
         "genius": {
             "respect": 0,
@@ -34,6 +34,7 @@
     },
 	
     "swipe_right": {
+    "next": "",
         "text": "Не ребята, я пас",
         "genius": {
             "respect": -2,

@@ -103,11 +103,31 @@ public static class CardsManager
     /// </summary>
     public static void PutNextCardIntoGame()
     {
-        Card nextCard;
+        Card nextCard = null;
+        SwipeType swipeType = GameManager.GetSwipeLastCard(); 
 
-        if(gameCard != null && gameCard.next.Length > 0) // след. карта
+        if(gameCard != null) // чек след. карты
         {
-            nextCard = GetCard(gameCard.next);
+            // есть карта, при свайпе влево
+            if (swipeType == SwipeType.Left && gameCard.swipe_left.next.Length > 0)
+            {
+                nextCard = GetCard(gameCard.swipe_left.next);
+            }
+            // вправо
+            else if(swipeType == SwipeType.Right && gameCard.swipe_right.next.Length > 0)
+            {
+                nextCard = GetCard(gameCard.swipe_right.next);
+            }
+            // нет след. карт
+            else
+            {
+                nextCard = CheckTheDayCard(GameManager.GetGameDay()); // ищем дневную
+
+                if (nextCard == null) // если дневной нет, то берем случайную
+                {
+                    nextCard = GetRandomCard();
+                }
+            }
         }
         else
         {

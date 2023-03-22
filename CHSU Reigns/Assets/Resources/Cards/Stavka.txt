@@ -1,6 +1,6 @@
 {
     "name": "",
-    "next": "",
+    
 
     "firstDayCard": false,
 
@@ -12,6 +12,7 @@
     "cardImageName": "",
 	
     "swipe_left": {
+"next": "",
         "text": "В другой раз",
         "genius": {
             "respect": -1,
@@ -34,6 +35,7 @@
     },
 	
     "swipe_right": {
+"next": "",
         "text": "Кто не рискует, тот не пьёт шампанское",
         "genius": {
             "respect": 2,

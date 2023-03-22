@@ -68,10 +68,7 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     public void InitCard(Card card)
     {
         this.card = card;
-    }
 
-    private void Start()
-    {
         rectTransform = GetComponent<RectTransform>();
         textController = GetComponent<TextOnCardController>();
 
