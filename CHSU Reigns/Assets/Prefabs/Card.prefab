@@ -574,7 +574,7 @@ GameObject:
   - component: {fileID: 788021670529006518}
   - component: {fileID: 4221180877942127451}
   - component: {fileID: 4435128816979429025}
-  - component: {fileID: 1058260642087863385}
+  - component: {fileID: 8659923857413598738}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -662,7 +662,7 @@ MonoBehaviour:
   backgroundSprite: {fileID: 21300000, guid: 64532e5c8033d0b49ba96f53bb9427dc, type: 3}
   defaultForegroundSprite: {fileID: 21300000, guid: ea9a1b26bb6d8a14194c5ecaf62053e0, type: 3}
   cardImage: {fileID: 9008486780816248835}
-  animatorCard: {fileID: 1058260642087863385}
+  animatorCard: {fileID: 8659923857413598738}
   swipingSpeed: 7
   returnSpeed: 10
   dragSpeed: 8
@@ -718,24 +718,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 1
---- !u!95 &1058260642087863385
-Animator:
-  serializedVersion: 5
+--- !u!111 &8659923857413598738
+Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8432914928867029489}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4fd57f0058ef35848b9d49881c085538, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a3c1321c8e44e0344b77f510eef79a4d, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: a3c1321c8e44e0344b77f510eef79a4d, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

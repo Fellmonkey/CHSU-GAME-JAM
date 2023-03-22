@@ -33,7 +33,7 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     [SerializeField] private Image cardImage; // Основное изображение на карте.
 
     [Header("Animator")]
-    [SerializeField] private Animator animatorCard;
+    [SerializeField] private Animation animatorCard;
 
     [Header("Values")] // разные значения
     [SerializeField] private float swipingSpeed; // скорость при свайпе
@@ -60,7 +60,7 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     [SerializeField] private bool isDragging; // перетаскиваем
     [SerializeField] private bool isSwiping; // карту свайпнули
 
-    private bool checkSound; // флаг 
+    private bool checkSound; // флаг, который позволяет проигрывать звук один раз 
 
     /// <summary>
     /// Инициализация карты.
@@ -84,12 +84,12 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         textController.SetLeftText(card.swipe_left.text);
         textController.SetRightText(card.swipe_right.text);
 
-        animatorCard.SetTrigger("flip"); // запускаем флип
-        enabled = false; // выкл. скрипт
     }
 
     private void Update()
     {
+        if(animatorCard.isPlaying) return; // если анимация играет скрипт не выполняется. Жесткая ошибка выключать скрипт (баги обеспечены ^_^).
+
         if (isDragging) // перетаскивание карты
         {
             OnDrag();
@@ -249,16 +249,6 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
             UIManager.SetNameSpeaking("");
         }
     }
-
-    /// <summary>
-    /// Для анимации. Конец переворота карты.
-    /// </summary>
-    public void EndCardFlip()
-    {
-        enabled = true; // вкл. скрипт
-        animatorCard.enabled = false; // выкл. аниматор
-    }
-
     /// <summary>
     /// Удалить карту.
     /// </summary>
