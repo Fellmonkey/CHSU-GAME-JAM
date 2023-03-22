@@ -10,10 +10,7 @@ public class Card
     public readonly int id; // ид 
 
     public string name; // название карты
-    public string next; // следующая карта (имя)
-
     public bool firstDayCard; // В этот день - это первая карта
-
     public string speakingName; // Имя говорящего
 
     public string title; // заголовок
@@ -28,7 +25,6 @@ public class Card
     {
         id = _id++;
         name = "";
-        next = "";
         swipe_left = new Swipe();
         swipe_right = new Swipe();
     }
@@ -69,6 +65,7 @@ public class Card
     [System.Serializable]
     public class Swipe
     {
+        public string next; // следующая карта (имя)
         public string text; // текст при свайпе
         public Characteristics genius;
         public Characteristics psychologist;
@@ -76,6 +73,8 @@ public class Card
 
         public Swipe()
         {
+            next = "";
+            text = "";
             genius = new Characteristics();
             psychologist = new Characteristics();
             sportsman = new Characteristics();
