@@ -27,6 +27,9 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     [SerializeField] private float dragSpeed; // Скорость следования карты за мышкой
     [SerializeField] private float rotationCoefficent; // коэф. вращения
 
+    [Header("Text")]
+    [SerializeField] private TMPro.TextMeshProUGUI titleText; // текст на карточке
+
     [Header("Maximum deviations")] // Максимальные отклонения карты (чтобы не ушла за экран)
     [SerializeField] private float maxDeviationRight;
     [SerializeField] private float maxDeviationLeft;
@@ -65,7 +68,21 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         isDragging = false;
         isSwiping = false;
 
-        UIManager.SetTitle(card.title); // Ставим текст
+        // Карточка с текстом
+        if (card.swipe_left.text.Length == 0 && card.swipe_right.text.Length == 0)
+        {
+            titleText.text = card.title;
+            titleText.gameObject.SetActive(true); // вкл. текст на карточке
+
+            UIManager.SetTitle(""); // Убираем title текст
+        }
+        else // Обычная карточка
+        {
+            titleText.gameObject.SetActive(false); // убираем текст на карточке
+
+            UIManager.SetTitle(card.title); // Ставим текст
+        }
+            
         textController.SetLeftText(card.swipe_left.text);
         textController.SetRightText(card.swipe_right.text);
     }
@@ -122,8 +139,11 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         // если перетащили карту вправо
         if (rectTransform.localPosition.x >= deviationRight)
         {
-            textController.ShowText(SwipeType.Right); // показать правый текст
-            UIManager.ShowCardPerformanceForCharacteristics(card, SwipeType.Right); // что будет с хар-ками
+            if (card.swipe_right.text.Length > 0) // Если есть какой-то текст
+                textController.ShowText(SwipeType.Right); // показать правый текст
+
+            // что будет с хар-ками
+            UIManager.ShowCardPerformanceForCharacteristics(card, SwipeType.Right); 
 
             if (checkSound)
             {
@@ -131,11 +151,14 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
                 AudioManager.Instance.PlaySFX("clockRight"); // воспроизведение звука 
             }
         }
-        // если карту карту влево
+        // если перетащили карту влево
         else if (rectTransform.localPosition.x <= deviationLeft)
         {
-            textController.ShowText(SwipeType.Left); // показать левый текст
-            UIManager.ShowCardPerformanceForCharacteristics(card, SwipeType.Left); // что будет с хар-ками
+            if (card.swipe_left.text.Length > 0) // Если есть какой-то текст
+                textController.ShowText(SwipeType.Left); // показать левый текст
+            
+            // что будет с хар-ками
+            UIManager.ShowCardPerformanceForCharacteristics(card, SwipeType.Left); 
 
             if (checkSound)
             {
@@ -157,7 +180,7 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         textController.HideText();
         UIManager.HideCardPerformanceForCharacteristics();
 
-        if (rectTransform.localPosition.x >= deviationRight)
+        if (rectTransform.localPosition.x >= deviationRight) // свайп вправо
         {
             swipeType = SwipeType.Right;
             isSwiping = true;
@@ -166,7 +189,7 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
             UIManager.ShowAnimation(card, swipeType);
             AudioManager.Instance.PlaySFX("newCard");
         }
-        else if (rectTransform.localPosition.x <= deviationLeft)
+        else if (rectTransform.localPosition.x <= deviationLeft) // свайп влево
         {
             swipeType = SwipeType.Left;
             isSwiping = true;
