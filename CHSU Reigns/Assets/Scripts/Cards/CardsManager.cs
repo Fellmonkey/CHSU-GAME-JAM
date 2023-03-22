@@ -118,6 +118,16 @@ public static class CardsManager
             {
                 nextCard = GetCard(gameCard.swipe_right.next);
             }
+            // нет след. карт
+            else
+            {
+                nextCard = CheckTheDayCard(GameManager.GetGameDay()); // ищем дневную
+
+                if (nextCard == null) // если дневной нет, то берем случайную
+                {
+                    nextCard = GetRandomCard();
+                }
+            }
         }
         else
         {
