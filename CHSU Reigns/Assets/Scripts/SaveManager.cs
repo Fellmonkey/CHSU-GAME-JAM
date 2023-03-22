@@ -50,6 +50,11 @@ public static class SaveManager
 
         return saveGame;
     }
+
+    public static void DeleteSaveGame()
+    {
+        File.Delete(pathToSaveGame);
+    }
 }
 
 
