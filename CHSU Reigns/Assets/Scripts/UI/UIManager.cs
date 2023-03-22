@@ -18,7 +18,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Image healthImage;
 
     [Header("Card holder")]
-    [SerializeField] private TitleTextController titleController;
+    [SerializeField] private UITextController titleController;
+    [SerializeField] private UITextController speakingController;
     [SerializeField] private EffectOnCharacteristicController respectEffect;
     [SerializeField] private EffectOnCharacteristicController knowledgeEffect;
     [SerializeField] private EffectOnCharacteristicController moneyEffect;
@@ -40,7 +41,7 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public static void SetTitle(string text)
     {
-        instance.titleController.SetText(text);
+        instance.titleController.ShowText(text);
     }
 
     /// <summary>
@@ -117,10 +118,15 @@ public class UIManager : MonoBehaviour
         instance.healthImage.fillAmount = (float)characteristics.health / Characteristics.maxValue;
         instance.moneyImage.fillAmount = (float)characteristics.money / Characteristics.maxValue;
     }
-        public void ShowAnimation(SwipeType swipeType, CharacteristicType characteristicType)
-    {
 
+    /// <summary>
+    /// Устанавливает имя говорящего.
+    /// </summary>
+    public static void SetNameSpeaking(string name)
+    {
+        instance.speakingController.ShowText(name);
     }
+
     /// <summary>
     /// Показывает анимацию роста или падения характеристик.
     /// </summary>
@@ -137,7 +143,6 @@ public class UIManager : MonoBehaviour
             }
                 if (effect < 0)
                 {
-                    Debug.Log("работает?");
                     instance.characteristicsEffect[numberAnimation].Play($"{nameAnimation}EffectFall");
                 }
                 else if (effect > 0)

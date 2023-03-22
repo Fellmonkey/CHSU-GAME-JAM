@@ -6,37 +6,37 @@
 
     "speakingName": "ноунейм",
 	
-    "title": "Всю ночь не спал... Может быть прогулять проверочную?",
+    "title": "Подменишь меня сегодня на работе ночью?",
     "day": 0,
     "backgroundImageName": "",
     "cardImageName": "",
 	
     "swipe_left": {
-        "text": "Надо сходить",
+        "text": "Хорошо",
         "genius": {
-            "respect": 0,
-            "knowledge": 1,
-            "health": -1,
-            "money": 0
+            "respect": 1,
+            "knowledge": -2,
+            "health": 0,
+            "money": 1
         },
         "psychologist": {
             "respect": 1,
-            "knowledge": 0,
-            "health": -2,
-            "money": 0
+            "knowledge": -2,
+            "health": 0,
+            "money": 1
         },
         "sportsman": {
-            "respect": 0,
-            "knowledge": 0,
-            "health": -1,
-            "money": 0
+            "respect": 1,
+            "knowledge": -2,
+            "health": 0,
+            "money": 1
         }
     },
 	
     "swipe_right": {
-        "text": "Отосплюсь лучше",
+        "text": "Мне надо выспаться перед парами",
         "genius": {
-            "respect": -2,
+            "respect": -1,
             "knowledge": 0,
             "health": 1,
             "money": 0
@@ -44,11 +44,11 @@
         "psychologist": {
             "respect": -1,
             "knowledge": 0,
-            "health": 2,
+            "health": 1,
             "money": 0
         },
         "sportsman": {
-            "respect": -2,
+            "respect": -1,
             "knowledge": 0,
             "health": 1,
             "money": 0

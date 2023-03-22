@@ -6,50 +6,50 @@
 
     "speakingName": "ноунейм",
 	
-    "title": "Всю ночь не спал... Может быть прогулять проверочную?",
+    "title": "Как будешь выхи проводить",
     "day": 0,
     "backgroundImageName": "",
     "cardImageName": "",
 	
     "swipe_left": {
-        "text": "Надо сходить",
+        "text": "Надо бы учебу подтянуть",
         "genius": {
-            "respect": 0,
+            "respect": 2,
             "knowledge": 1,
             "health": -1,
             "money": 0
         },
         "psychologist": {
             "respect": 1,
-            "knowledge": 0,
+            "knowledge": 2,
             "health": -2,
             "money": 0
         },
         "sportsman": {
-            "respect": 0,
-            "knowledge": 0,
+            "respect": 1,
+            "knowledge": 1,
             "health": -1,
             "money": 0
         }
     },
 	
     "swipe_right": {
-        "text": "Отосплюсь лучше",
+        "text": "Надо бы отдохнуть",
         "genius": {
-            "respect": -2,
-            "knowledge": 0,
+            "respect": -1,
+            "knowledge": -2,
             "health": 1,
             "money": 0
         },
         "psychologist": {
-            "respect": -1,
-            "knowledge": 0,
+            "respect": -2,
+            "knowledge": -1,
             "health": 2,
             "money": 0
         },
         "sportsman": {
-            "respect": -2,
-            "knowledge": 0,
+            "respect": -1,
+            "knowledge": -1,
             "health": 1,
             "money": 0
         }

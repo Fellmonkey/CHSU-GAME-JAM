@@ -3,6 +3,8 @@
     "next": "",
 	
     "firstDayCard": false,
+
+    "speakingName": "ноунейм",
 	
     "title": "Кафе или столовая?",
     "day": 0,

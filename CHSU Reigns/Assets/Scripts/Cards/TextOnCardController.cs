@@ -27,9 +27,6 @@ public class TextOnCardController : MonoBehaviour
     {
         backgroundTransform.localPosition = startBackgroundPosition;
         isShowing = false;
-
-        textLeft.gameObject.SetActive(false);
-        textRight.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -91,7 +88,5 @@ public class TextOnCardController : MonoBehaviour
     public void HideText()
     {
         isShowing = false;
-        textLeft.gameObject.SetActive(false);
-        textRight.gameObject.SetActive(false);
     }
 }

@@ -1,32 +1,32 @@
 {
-    "name": "Hello2",
-    "next": "Hello3",
-	
+    "name": "",
+    "next": "",
+
     "firstDayCard": false,
 
     "speakingName": "ноунейм",
 	
-    "title": "Да у нас то ладно... Я что звоню то! Ты ж бедолага, картошку взять забыл. В город поеду - завезу!",
-    "day": 1,
+    "title": "Я сегодня съезжаю - поможешь с переездом?",
+    "day": 0,
     "backgroundImageName": "",
     "cardImageName": "",
 	
     "swipe_left": {
-        "text": "Да не надо, па...",
+        "text": "Прости не могу",
         "genius": {
-            "respect": 0,
+            "respect": -1,
             "knowledge": 0,
             "health": 0,
             "money": 0
         },
         "psychologist": {
-            "respect": 0,
+            "respect": -2,
             "knowledge": 0,
             "health": 0,
             "money": 0
         },
         "sportsman": {
-            "respect": 0,
+            "respect": -1,
             "knowledge": 0,
             "health": 0,
             "money": 0
@@ -34,24 +34,24 @@
     },
 	
     "swipe_right": {
-        "text": "Да не надо, па...",
+        "text": "Конечно",
         "genius": {
-            "respect": 0,
+            "respect": 2,
             "knowledge": 0,
-            "health": 0,
-            "money": 0
+            "health": -1,
+            "money": 1
         },
         "psychologist": {
-            "respect": 0,
+            "respect": 1,
             "knowledge": 0,
-            "health": 0,
-            "money": 0
+            "health": -2,
+            "money": 1
         },
         "sportsman": {
-            "respect": 0,
-            "knowledge": 0,
-            "health": 0,
-            "money": 0
+            "respect": 1,
+            "knowledge": 2,
+            "health": -1,
+            "money": 1
         }
     }
 }

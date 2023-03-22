@@ -3,6 +3,8 @@
     "next": "",
 
     "firstDayCard": false,
+
+    "speakingName": "ноунейм",
 	
     "title": "Опаздываю на пару. На такси или на автобусе?",
     "day": 0,

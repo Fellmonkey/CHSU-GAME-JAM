@@ -30,7 +30,7 @@ public static class ResourcesManager
 
 
     /// <summary>
-    /// Возвращает спрайт из папки Resources.
+    /// Возвращает спрайт из папки Resources (или null).
     /// </summary>
     public static Sprite GetSprite(string name)
     {
@@ -45,20 +45,16 @@ public static class ResourcesManager
         try
         {
             sprite = Resources.Load<Sprite>("Sprites/" + name);
+
             if (sprite != null)
             {
                 sprites.Add(new NamedSprite(name, sprite));
             }
-            else
-            {
-                throw new Exception("Sprite \"" + name + "\" not found!");
-            }
+
             return sprite;
         }
-        catch (Exception e)
-        {
-            Debug.LogException(e);
-        }
+        catch (Exception) { }
+
 
         return null;
     }

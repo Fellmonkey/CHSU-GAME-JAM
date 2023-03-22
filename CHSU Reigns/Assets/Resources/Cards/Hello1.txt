@@ -3,6 +3,8 @@
     "next": "Hello2",
 
     "firstDayCard": true,
+
+    "speakingName": "ноунейм",
 	
     "title": "Привет,студент! Ну как доехал?",
     "day": 1,

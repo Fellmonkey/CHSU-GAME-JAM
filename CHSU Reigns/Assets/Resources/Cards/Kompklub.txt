@@ -3,6 +3,8 @@
     "next": "",
 
     "firstDayCard": false,
+
+    "speakingName": "ноунейм",
 	
     "title": "Сегодня ночью идём в компьютерный клуб. Ты с нами?",
     "day": 0,

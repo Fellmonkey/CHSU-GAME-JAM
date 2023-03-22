@@ -3,52 +3,54 @@
     "next": "",
 
     "firstDayCard": false,
+
+    "speakingName": "ноунейм",
 	
-    "title": "Я хотел бы с вами, обсудить вашу успеваемость. Может пообедаем вместе?",
+    "title": "Пойду себе витаминки для профилактики куплю. Ты со мной?",
     "day": 0,
     "backgroundImageName": "",
     "cardImageName": "",
 	
     "swipe_left": {
-        "text": "",
+        "text": "Да",
         "genius": {
             "respect": 0,
-            "knowledge": 2,
+            "knowledge": 0,
             "health": 1,
-            "money": -2
+            "money": -1
         },
         "psychologist": {
-            "respect": 2,
+            "respect": 0,
             "knowledge": 1,
-            "health": 0,
-            "money": -2
+            "health": 1,
+            "money": -1
         },
         "sportsman": {
-            "respect": 1,
+            "respect": 0,
             "knowledge": 0,
-            "health": 2,
-            "money": -2
+            "health": 1,
+            "money": -1
         }
     },
 	
     "swipe_right": {
-        "text": "",
+        "text": "Нет",
         "genius": {
-            "respect": -2,
+            "respect": 0,
             "knowledge": 0,
-            "health": -1,
+            "health": -2,
             "money": 0
         },
         "psychologist": {
             "respect": 0,
-            "knowledge": -1,
+            "knowledge": 0,
             "health": -2,
             "money": 0
         },
         "sportsman": {
-            "respect": -1,
-            "knowledge": -2,
-            "health": 0,
+            "respect": 0,
+            "knowledge": 0,
+            "health": -2,
             "money": 0
         }
     }

@@ -3,6 +3,8 @@
     "next": "Kurator",
 
     "firstDayCard": false,
+
+    "speakingName": "ноунейм",
 	
     "title": "Там твою кровать заняли. Будешь её отбирать?",
     "day": 1,

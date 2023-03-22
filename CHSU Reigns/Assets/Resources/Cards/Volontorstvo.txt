@@ -3,6 +3,8 @@
     "next": "",
 
     "firstDayCard": false,
+
+    "speakingName": "ноунейм",
 	
     "title": "Нужна помощь в организации мероприятия. Поможешь?",
     "day": 0,

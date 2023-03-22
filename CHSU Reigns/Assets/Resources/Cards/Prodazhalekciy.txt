@@ -6,50 +6,50 @@
 
     "speakingName": "ноунейм",
 	
-    "title": "Сынок, поможешь мне с работой?",
+    "title": "Слушай, а можешь за меня переписать мне лекции, которые у тебя есть? Я заплачу.",
     "day": 0,
     "backgroundImageName": "",
     "cardImageName": "",
 	
     "swipe_left": {
-        "text": "Да",
+        "text": "Хм... ну давай",
         "genius": {
-            "respect": -1,
-            "knowledge": 0,
+            "respect": 1,
+            "knowledge": 1,
             "health": -1,
             "money": 2
         },
         "psychologist": {
             "respect": 1,
-            "knowledge": -1,
+            "knowledge": 1,
             "health": -2,
             "money": 2
         },
         "sportsman": {
-            "respect": 0,
-            "knowledge": -2,
-            "health": 0,
+            "respect": 1,
+            "knowledge": 1,
+            "health": -2,
             "money": 2
         }
     },
 	
     "swipe_right": {
-        "text": "Нет, у меня пара",
+        "text": "Не... Мне некогда",
         "genius": {
             "respect": -1,
-            "knowledge": 2,
-            "health": -1,
+            "knowledge": -1,
+            "health": 0,
             "money": 0
         },
         "psychologist": {
-            "respect": 2,
-            "knowledge": 1,
-            "health": -2,
+            "respect": -1,
+            "knowledge": -1,
+            "health": 0,
             "money": 0
         },
         "sportsman": {
-            "respect": 1,
-            "knowledge": 1,
+            "respect": -1,
+            "knowledge": -1,
             "health": 0,
             "money": 0
         }

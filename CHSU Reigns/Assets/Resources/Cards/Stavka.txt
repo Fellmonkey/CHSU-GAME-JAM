@@ -1,57 +1,57 @@
 {
-    "name": "Konkurs",
+    "name": "",
     "next": "",
 
     "firstDayCard": false,
 
     "speakingName": "ноунейм",
 	
-    "title": "Там конкурс какой-то. Поучавствуешь?",
-    "day": 1,
+    "title": "Сегодня футбол! Не хочешь поставить на фаворита?",
+    "day": 0,
     "backgroundImageName": "",
     "cardImageName": "",
 	
     "swipe_left": {
-        "text": "Ну давай, давай!",
+        "text": "В другой раз",
         "genius": {
-            "respect": 1,
-            "knowledge": 1,
-            "health": 0,
-            "money": 1
-        },
-        "psychologist": {
-            "respect": 0,
-            "knowledge": -1,
+            "respect": -1,
+            "knowledge": 0,
             "health": 0,
             "money": 0
         },
+        "psychologist": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": -1,
+            "money": 0
+        },
         "sportsman": {
-            "respect": -1,
-            "knowledge": -2,
+            "respect": 0,
+            "knowledge": -1,
             "health": 0,
             "money": 0
         }
     },
 	
     "swipe_right": {
-        "text": "Да не моё это",
+        "text": "Кто не рискует, тот не пьёт шампанское",
         "genius": {
-            "respect": -1,
+            "respect": 2,
             "knowledge": 0,
-            "health": 0,
-            "money": 0
+            "health": -1,
+            "money": -2
         },
         "psychologist": {
             "respect": 0,
             "knowledge": -1,
-            "health": 0,
-            "money": 0
+            "health": 2,
+            "money": -2
         },
         "sportsman": {
             "respect": -1,
-            "knowledge": 0,
+            "knowledge": 2,
             "health": 0,
-            "money": 0
+            "money": -2
         }
     }
 }

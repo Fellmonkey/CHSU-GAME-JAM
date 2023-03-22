@@ -5,7 +5,7 @@ using TMPro;
 /// <summary>
 ///  онтроллер главного текста.
 /// </summary>
-public class TitleTextController : MonoBehaviour
+public class UITextController : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI titleText;
     [SerializeField] private float speedAnimation;
@@ -39,7 +39,12 @@ public class TitleTextController : MonoBehaviour
         titleText.color = newColor;
     }
 
-    public void SetText(string text)
+    /// <summary>
+    /// ѕоказывает текст, который передаетс€ в качестве параметра. 
+    /// ≈сли нужно скрыть текст, то в качестве параметра нужно отправить пустую строку.
+    /// </summary>
+    /// <param name="text"></param>
+    public void ShowText(string text) 
     {
         if (enabled && !flagAnimation)
         {

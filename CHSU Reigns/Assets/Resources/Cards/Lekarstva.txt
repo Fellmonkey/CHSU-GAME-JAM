@@ -6,21 +6,21 @@
 
     "speakingName": "ноунейм",
 	
-    "title": "Всю ночь не спал... Может быть прогулять проверочную?",
+    "title": "Тебе купить лекарства?",
     "day": 0,
     "backgroundImageName": "",
     "cardImageName": "",
 	
     "swipe_left": {
-        "text": "Надо сходить",
+        "text": "Да я просто простудился",
         "genius": {
             "respect": 0,
-            "knowledge": 1,
-            "health": -1,
+            "knowledge": 0,
+            "health": -2,
             "money": 0
         },
         "psychologist": {
-            "respect": 1,
+            "respect": 0,
             "knowledge": 0,
             "health": -2,
             "money": 0
@@ -28,30 +28,30 @@
         "sportsman": {
             "respect": 0,
             "knowledge": 0,
-            "health": -1,
+            "health": -2,
             "money": 0
         }
     },
 	
     "swipe_right": {
-        "text": "Отосплюсь лучше",
+        "text": "Буду благодарен",
         "genius": {
-            "respect": -2,
+            "respect": 0,
             "knowledge": 0,
-            "health": 1,
-            "money": 0
+            "health": -1,
+            "money": -2
         },
         "psychologist": {
-            "respect": -1,
+            "respect": 0,
             "knowledge": 0,
-            "health": 2,
-            "money": 0
+            "health": -1,
+            "money": -2
         },
         "sportsman": {
-            "respect": -2,
+            "respect": 0,
             "knowledge": 0,
-            "health": 1,
-            "money": 0
+            "health": -1,
+            "money": -2
         }
     }
 }

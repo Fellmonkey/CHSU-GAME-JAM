@@ -3,6 +3,8 @@
     "next": "Obshaga",
 
     "firstDayCard": false,
+
+    "speakingName": "ноунейм",
 	
     "title": "Ага... Шоб ты в своих КФЦ травился. Нет уж. ",
     "day": 1,

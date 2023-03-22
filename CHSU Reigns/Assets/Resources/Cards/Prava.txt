@@ -3,6 +3,8 @@
     "next": "",
 
     "firstDayCard": false,
+
+    "speakingName": "ноунейм",
 	
     "title": "Будешь права получать?",
     "day": 0,

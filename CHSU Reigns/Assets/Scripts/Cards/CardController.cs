@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 /// <summary>
 /// Контроллер карты, которая сейчас в игре.
@@ -20,15 +20,26 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     [Header("Swipe positions")] // позиции карты при свайпе
     [SerializeField] private Vector3 swipePositionRight;
     [SerializeField] private Vector3 swipePositionLeft;
+    
+    [Header("Text")]
+    [SerializeField] private TMPro.TextMeshProUGUI titleText; // текст на карточке
+
+    [Header("Sprites")]
+    [SerializeField] private Sprite backgroundSprite; // задний фон у карты
+    // стандартный передний фон (если не выбран)
+    [SerializeField] private Sprite defaultForegroundSprite;
+
+    [Header("Images")]
+    [SerializeField] private Image cardImage; // Основное изображение на карте.
+
+    [Header("Animator")]
+    [SerializeField] private Animator animatorCard;
 
     [Header("Values")] // разные значения
     [SerializeField] private float swipingSpeed; // скорость при свайпе
     [SerializeField] private float returnSpeed; // скорость возврата к исходной позиции
     [SerializeField] private float dragSpeed; // Скорость следования карты за мышкой
     [SerializeField] private float rotationCoefficent; // коэф. вращения
-
-    [Header("Text")]
-    [SerializeField] private TMPro.TextMeshProUGUI titleText; // текст на карточке
 
     [Header("Maximum deviations")] // Максимальные отклонения карты (чтобы не ушла за экран)
     [SerializeField] private float maxDeviationRight;
@@ -64,27 +75,17 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         rectTransform = GetComponent<RectTransform>();
         textController = GetComponent<TextOnCardController>();
 
-        rectTransform.localPosition = startPosition;
         isDragging = false;
         isSwiping = false;
 
-        // Карточка с текстом
-        if (card.swipe_left.text.Length == 0 && card.swipe_right.text.Length == 0)
-        {
-            titleText.text = card.title;
-            titleText.gameObject.SetActive(true); // вкл. текст на карточке
+        rectTransform.localPosition = startPosition;
+        cardImage.sprite = backgroundSprite;
 
-            UIManager.SetTitle(""); // Убираем title текст
-        }
-        else // Обычная карточка
-        {
-            titleText.gameObject.SetActive(false); // убираем текст на карточке
-
-            UIManager.SetTitle(card.title); // Ставим текст
-        }
-            
         textController.SetLeftText(card.swipe_left.text);
         textController.SetRightText(card.swipe_right.text);
+
+        animatorCard.SetTrigger("flip"); // запускаем флип
+        enabled = false; // выкл. скрипт
     }
 
     private void Update()
@@ -204,6 +205,58 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     {
         Vector3 newAngle = new Vector3(0,0,(rectTransform.localPosition.x - startPosition.x) * rotationCoefficent * -1);
         rectTransform.eulerAngles = newAngle;
+    }
+
+    /// <summary>
+    /// Для анимации. Устанавливает нужную картинку и текст.
+    /// </summary>
+    public void SetImageAndText()
+    {
+        // Карточка с текстом
+        if (card.swipe_left.text.Length == 0 && card.swipe_right.text.Length == 0)
+        {
+            titleText.text = card.title; // Устанавливаем сам текст
+            titleText.gameObject.SetActive(true); // вкл. текст на карточке
+
+            cardImage.sprite = null; // убираем изображение с карты
+            UIManager.SetTitle(""); // Убираем title текст
+        }
+        else // Обычная карточка
+        {
+            UIManager.SetTitle(card.title); // Ставим текст
+            
+            // Получаем картинку (если она вообще есть)
+            Sprite sprite = ResourcesManager.GetSprite(card.cardImageName);
+
+            if (sprite == null) // картинки нет
+            {
+                // устанавливаем дефолтную
+                cardImage.sprite = defaultForegroundSprite;
+            }
+            else
+            {
+                // устанавливаем нужную картинку
+                cardImage.sprite = sprite;
+            }
+        }
+
+        if (card.speakingName.Length > 0) // Есть имя говорящего
+        {
+            UIManager.SetNameSpeaking(card.speakingName);
+        }
+        else // нет имени говорящего
+        {
+            UIManager.SetNameSpeaking("");
+        }
+    }
+
+    /// <summary>
+    /// Для анимации. Конец переворота карты.
+    /// </summary>
+    public void EndCardFlip()
+    {
+        enabled = true; // вкл. скрипт
+        animatorCard.enabled = false; // выкл. аниматор
     }
 
     /// <summary>

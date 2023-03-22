@@ -3,6 +3,8 @@
     "next": "Konkurs",
 
     "firstDayCard": false,
+
+    "speakingName": "ноунейм",
 	
     "title": "Слушай, а ты пойдешь с нами в бар - отмечать поступление",
     "day": 1,

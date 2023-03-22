@@ -14,6 +14,8 @@ public class Card
 
     public bool firstDayCard; // В этот день - это первая карта
 
+    public string speakingName; // Имя говорящего
+
     public string title; // заголовок
     public int day; // день
     public string backgroundImageName; // задний фон
