@@ -17,7 +17,7 @@ public static class SaveManager
     }
 
     /// <summary>
-    /// Сохраняет игру
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
     /// </summary>
     public static void SaveGame(SaveGame saveGame)
     {
@@ -30,7 +30,7 @@ public static class SaveManager
     }
 
     /// <summary>
-    /// Проверяет, есть ли сохраненные игры
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
     /// </summary>
     public static bool CheckSavedGames()
     {
@@ -38,7 +38,7 @@ public static class SaveManager
     }
 
     /// <summary>
-    /// Загружает игру
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
     /// </summary>
     public static SaveGame LoadGame()
     {
@@ -50,11 +50,18 @@ public static class SaveManager
 
         return saveGame;
     }
+    /// <summary>
+    /// Р’СЂРµРјРµРЅРЅРѕРµ СЂРµС€РµРЅРёРµ
+    /// </summary>
+    public static void DeleteSaveGame()
+    {
+        File.Delete(pathToSaveGame);
+    }
 }
-
+    
 
 /// <summary>
-/// Сохранение игры.
+/// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ.
 /// </summary>
 [System.Serializable]
 public class SaveGame

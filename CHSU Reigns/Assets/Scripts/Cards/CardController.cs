@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-
 /// <summary>
 /// Контроллер карты, которая сейчас в игре.
 /// </summary>
@@ -82,6 +81,8 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         textController.SetRightText(card.swipe_right.text);
 
         animatorCard.Play();
+
+       
     }
 
     private void Update()

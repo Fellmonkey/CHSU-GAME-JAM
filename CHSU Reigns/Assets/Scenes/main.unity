@@ -2845,7 +2845,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.107
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -4180,6 +4180,7 @@ MonoBehaviour:
   voiceSource: {fileID: 976621332}
   musicSlider: {fileID: 531944708}
   sfxSlider: {fileID: 2013802651}
+  timer: 0
 --- !u!4 &1861198800
 Transform:
   m_ObjectHideFlags: 0

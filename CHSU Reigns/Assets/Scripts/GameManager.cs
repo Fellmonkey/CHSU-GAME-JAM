@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Card holder")]
     [SerializeField] private Transform CardHolder;
+    private int randomSessia;
 
     // Тип свайпа последней карты
     private SwipeType swipeType;
@@ -24,8 +25,14 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         CardsManager.LoadCards();
+        randomSessia = Random.Range(30,40);
+
     }
 
+    private void Update() {
+
+         if(gameDay >= randomSessia) SceneManager.LoadScene(1);
+    }
     private void Start()
     {
         gameCharacteristics = new Characteristics();
