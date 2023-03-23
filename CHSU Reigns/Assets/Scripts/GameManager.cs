@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
         else
         {
             gameDay = 1;
-            playerClass = 0; //(PlayerClass)Random.Range(0,3);
+            playerClass = (PlayerClass)Random.Range(0,3);
             gameCharacteristics.SetDefaultValues();
             CreateNextCard();
         }
