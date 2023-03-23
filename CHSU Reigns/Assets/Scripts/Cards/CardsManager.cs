@@ -66,9 +66,12 @@ public static class CardsManager
     {
         int rand = UnityEngine.Random.Range(0, randomCards.Length);
 
-        while (randomCards[rand].id == gameCard.id)
+        if (gameCard != null)
         {
-            rand = UnityEngine.Random.Range(0, randomCards.Length);
+            while (randomCards[rand].id == gameCard.id)
+            {
+                rand = UnityEngine.Random.Range(0, randomCards.Length);
+            }
         }
 
         return randomCards[rand];

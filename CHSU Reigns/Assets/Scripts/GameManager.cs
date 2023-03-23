@@ -61,8 +61,6 @@ public class GameManager : MonoBehaviour
         UIManager.SetPlayerClassUI(playerClass);
         UIManager.SetCharacteristics(gameCharacteristics);
         UIManager.SetDay(gameDay);
-
-        AudioManager.Instance.PlayVoice("voice_1"); // воспроизведение звука бла-бла-бла
     }
 
     /// <summary>

@@ -132,23 +132,26 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public static void ShowAnimation(Card card, SwipeType swipeType)
     {
+        PlayerClass playerClass = GameManager.GetPlayerClass();
+
         void performanceForCharacteristics(int numberAnimation, string nameAnimation ,CharacteristicType type)
         {
             // Влияние на данную характеристику
-            int effect = card.GetCharacteristic(swipeType,default, type);
+            int effect = card.GetCharacteristic(swipeType, playerClass, type);
 
             if (effect == 0)
             {
                 return;
             }
-                if (effect < 0)
-                {
-                    instance.characteristicsEffect[numberAnimation].Play($"{nameAnimation}EffectFall");
-                }
-                else if (effect > 0)
-                {
-                    instance.characteristicsEffect[numberAnimation].Play($"{nameAnimation}EffectGrow");
-                }        
+
+            if (effect < 0)
+            {
+                instance.characteristicsEffect[numberAnimation].Play($"{nameAnimation}EffectFall");
+            }
+            else if (effect > 0)
+            {
+                instance.characteristicsEffect[numberAnimation].Play($"{nameAnimation}EffectGrow");
+            }        
         }
 
         performanceForCharacteristics(0,"respect",CharacteristicType.respect);
