@@ -30,6 +30,7 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
     [Header("Images")]
     [SerializeField] private Image cardImage; // Основное изображение на карте.
+    [SerializeField] private Image bgImage; // Основное изображение на карте.
 
     [Header("Animator")]
     [SerializeField] private Animation animatorCard;
@@ -75,14 +76,14 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         isSwiping = false;
 
         rectTransform.localPosition = startPosition;
-        cardImage.sprite = backgroundSprite;
+        bgImage.gameObject.SetActive(true);
+        cardImage.gameObject.SetActive(false);
+        titleText.gameObject.SetActive(false);
 
         textController.SetLeftText(card.swipe_left.text);
         textController.SetRightText(card.swipe_right.text);
 
         animatorCard.Play();
-
-       
     }
 
     private void Update()
@@ -212,10 +213,12 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     public void SetImageAndText()
     {
         // Карточка с текстом
-        if (card.swipe_left.text.Length == 0 && card.swipe_right.text.Length == 0)
+        if ((card.swipe_left.text.Length == 0 && card.swipe_right.text.Length == 0) ||
+            card.cardImageName == "")
         {
             titleText.text = card.title; // Устанавливаем сам текст
             titleText.gameObject.SetActive(true); // вкл. текст на карточке
+            cardImage.gameObject.SetActive(false);
 
             cardImage.sprite = null; // убираем изображение с карты
             UIManager.SetTitle(""); // Убираем title текст
@@ -229,14 +232,21 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
             if (sprite == null) // картинки нет
             {
-                // устанавливаем дефолтную
+                // устанавливаем дефолтую
                 cardImage.sprite = defaultForegroundSprite;
+
+                if (cardImage.sprite == null)
+                {
+                    cardImage.gameObject.SetActive(false);
+                }
             }
             else
             {
                 // устанавливаем нужную картинку
                 cardImage.sprite = sprite;
             }
+
+            cardImage.gameObject.SetActive(true);
         }
 
         if (card.speakingName.Length > 0) // Есть имя говорящего
@@ -247,6 +257,8 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         {
             UIManager.SetNameSpeaking("");
         }
+
+        bgImage.gameObject.SetActive(false);
     }
 
     /// <summary>
