@@ -1,0 +1,55 @@
+{
+    "name": "",
+    "firstDayCard": false,
+    "speakingName": "Папа",
+    "title": "Сынок, поможешь мне с работой?",
+    "day": 0,
+    "backgroundImageName": "",
+    "cardImageName": "",
+	
+    "swipe_left": {
+	  "next": "",
+        "text": "Да",
+        "genius": {
+            "respect": -1,
+            "knowledge": 0,
+            "health": -1,
+            "money": 2
+        },
+        "psychologist": {
+            "respect": 1,
+            "knowledge": -1,
+            "health": -2,
+            "money": 2
+        },
+        "sportsman": {
+            "respect": 0,
+            "knowledge": -2,
+            "health": 0,
+            "money": 2
+        }
+    },
+	
+    "swipe_right": {
+	  "next": "",
+        "text": "Нет, у меня пара",
+        "genius": {
+            "respect": -1,
+            "knowledge": 2,
+            "health": -1,
+            "money": 0
+        },
+        "psychologist": {
+            "respect": 2,
+            "knowledge": 1,
+            "health": -2,
+            "money": 0
+        },
+        "sportsman": {
+            "respect": 1,
+            "knowledge": 1,
+            "health": 0,
+            "money": 0
+        }
+    }
+}

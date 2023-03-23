@@ -1,0 +1,55 @@
+{
+    "name": "",
+    "firstDayCard": false,
+    "speakingName": "Саня одногрупник",
+    "title": "Хей! Ты пойдёшь сегодня пить?",
+    "day": 0,
+    "backgroundImageName": "",
+    "cardImageName": "",
+	
+    "swipe_left": {
+	  "next": "",
+        "text": "Да",
+        "genius": {
+            "respect": 1,
+            "knowledge": 0,
+            "health": 0,
+            "money": -1
+        },
+        "psychologist": {
+            "respect": 1,
+            "knowledge": 0,
+            "health": 0,
+            "money": -1
+        },
+        "sportsman": {
+            "respect": 1,
+            "knowledge": 0,
+            "health": 0,
+            "money": -1
+        }
+    },
+	
+    "swipe_right": {
+	  "next": "",
+        "text": "Нет",
+        "genius": {
+            "respect": -1,
+            "knowledge": 0,
+            "health": 0,
+            "money": 0
+        },
+        "psychologist": {
+            "respect": -2,
+            "knowledge": 0,
+            "health": 0,
+            "money": 0
+        },
+        "sportsman": {
+            "respect": -2,
+            "knowledge": 0,
+            "health": 0,
+            "money": 0
+        }
+    }
+}

@@ -1,0 +1,55 @@
+{
+    "name": "",
+    "firstDayCard": false,
+    "speakingName": "Андрей одногруппник",
+    "title": "Слушай, а можешь за меня переписать мне лекции, которые у тебя есть? Я заплачу.",
+    "day": 0,
+    "backgroundImageName": "",
+    "cardImageName": "",
+	
+    "swipe_left": {
+	  "next": "",
+        "text": "Хм... ну давай",
+        "genius": {
+            "respect": 1,
+            "knowledge": 1,
+            "health": -1,
+            "money": 2
+        },
+        "psychologist": {
+            "respect": 1,
+            "knowledge": 1,
+            "health": -2,
+            "money": 2
+        },
+        "sportsman": {
+            "respect": 1,
+            "knowledge": 1,
+            "health": -2,
+            "money": 2
+        }
+    },
+	
+    "swipe_right": {
+	  "next": "",
+        "text": "Не... Мне некогда",
+        "genius": {
+            "respect": -1,
+            "knowledge": -1,
+            "health": 0,
+            "money": 0
+        },
+        "psychologist": {
+            "respect": -1,
+            "knowledge": -1,
+            "health": 0,
+            "money": 0
+        },
+        "sportsman": {
+            "respect": -1,
+            "knowledge": -1,
+            "health": 0,
+            "money": 0
+        }
+    }
+}

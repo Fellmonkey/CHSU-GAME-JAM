@@ -1,0 +1,55 @@
+{
+    "name": "",
+    "firstDayCard": false,
+    "speakingName": "Шутницкий М.К.",
+    "title": "На следующем занятии вам нужно будет подготовить лабу из моего списка",
+    "day": 0,
+    "backgroundImageName": "",
+    "cardImageName": "",
+	
+    "swipe_left": {
+        "next": "",
+        "text": "Забиру в тихоря самую лёгкую",
+        "genius": {
+            "respect": -1,
+            "knowledge": 1,
+            "health": 1,
+            "money": 0
+        },
+        "psychologist": {
+            "respect": -1,
+            "knowledge": 1,
+            "health": 1,
+            "money": 0
+        },
+        "sportsman": {
+            "respect": -1,
+            "knowledge": 1,
+            "health": 1,
+            "money": 0
+        }
+    },
+	
+    "swipe_right": {
+        "next": "",
+        "text": "Отдать её нуждающемуся",
+        "genius": {
+            "respect": -2,
+            "knowledge": 0,
+            "health": 0,
+            "money": 0
+        },
+        "psychologist": {
+            "respect": -2,
+            "knowledge": 0,
+            "health": 0,
+            "money": 0
+        },
+        "sportsman": {
+            "respect": -2,
+            "knowledge": 0,
+            "health": 0,
+            "money": 0
+        }
+    }
+}

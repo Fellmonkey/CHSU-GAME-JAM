@@ -1,0 +1,58 @@
+{
+    "name": "",
+
+    "firstDayCard": false,
+
+    "speakingName": "",
+	
+    "title": "Я уснул по пути в ВУЗ. Меня отправили на больницу и отчислили",
+    "day": 0,
+    "backgroundImageName": "",
+    "cardImageName": "",
+	
+    "swipe_left": {
+ "next": "",
+        "text": "",
+        "genius": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": 0,
+            "money": 0
+        },
+        "psychologist": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": 0,
+            "money": 0
+        },
+        "sportsman": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": 0,
+            "money": 0
+        }
+    },
+	
+    "swipe_right": {
+ "next": "",
+        "text": "",
+        "genius": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": 0,
+            "money": 0
+        },
+        "psychologist": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": 0,
+            "money": 0
+        },
+        "sportsman": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": 0,
+            "money": 0
+        }
+    }
+}

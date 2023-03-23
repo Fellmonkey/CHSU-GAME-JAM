@@ -1,0 +1,55 @@
+{
+    "name": "Hello3.1",
+    "firstDayCard": false,
+    "speakingName": "Папа",
+    "title": "Вот и славно! Заеду к тебе, когда в город поеду. ",
+    "day": 1,
+    "backgroundImageName": "",
+    "cardImageName": "",
+	
+    "swipe_left": {
+        "next": "Obshaga",
+        "text": "Ладно...",
+        "genius": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": 0,
+            "money": 0
+        },
+        "psychologist": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": 0,
+            "money": 0
+        },
+        "sportsman": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": 0,
+            "money": 0
+        }
+    },
+	
+    "swipe_right": {
+        "next": "Obshaga",
+        "text": "Хорошо...",
+        "genius": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": 0,
+            "money": 0
+        },
+        "psychologist": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": 0,
+            "money": 0
+        },
+        "sportsman": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": 0,
+            "money": 0
+        }
+    }
+}

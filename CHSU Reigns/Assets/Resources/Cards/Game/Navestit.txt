@@ -1,0 +1,55 @@
+{
+    "name": "",
+    "firstDayCard": false,
+    "speakingName": "Папа",
+    "title": "Студент, что-то ты давно нас не навещал. Мы тебя ждём на этих выходных",
+    "day": 0,
+    "backgroundImageName": "",
+    "cardImageName": "",
+	
+    "swipe_left": {
+        "next": "",
+        "text": "Пап, я не могу приехать",
+        "genius": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": -2,
+            "money": -1
+        },
+        "psychologist": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": -2,
+            "money": -1
+        },
+        "sportsman": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": -2,
+            "money": -1
+        }
+    },
+	
+    "swipe_right": {
+        "next": "",
+        "text": "Хорошо, до встречи",
+        "genius": {
+            "respect": -1,
+            "knowledge": 0,
+            "health": 1,
+            "money": 1
+        },
+        "psychologist": {
+            "respect": 0,
+            "knowledge": -1,
+            "health": 1,
+            "money": 1
+        },
+        "sportsman": {
+            "respect": -1,
+            "knowledge": -1,
+            "health": 1,
+            "money": 1
+        }
+    }
+}

@@ -12,11 +12,11 @@ public static class ResourcesManager
     private static List<NamedSprite> sprites = new List<NamedSprite>();
 
     /// <summary>
-    /// Загружает карты из папки Resources.
+    /// Загружает карты основной игры из папки Resources.
     /// </summary>
-    public static Card[] GetCards()
+    public static Card[] GetGameCards()
     {
-        TextAsset[] textsAssets = Resources.LoadAll<TextAsset>("Cards");
+        TextAsset[] textsAssets = Resources.LoadAll<TextAsset>("Cards/Game");
         List<Card> cards = new List<Card>();
 
         for (int i = 0; i < textsAssets.Length; i++)
@@ -29,6 +29,32 @@ public static class ResourcesManager
         return cards.ToArray();
     }
 
+    public static Card[] GetDefeatCards(CharacteristicType type)
+    {
+        string path = "Cards/Defeat/";
+
+        if (type == CharacteristicType.respect)
+            path += "Respect";
+        else if (type == CharacteristicType.health)
+            path += "Health";
+        else if (type == CharacteristicType.money)
+            path += "Money";
+        else
+            path += "Knowledge";
+
+
+        TextAsset[] textsAssets = Resources.LoadAll<TextAsset>(path);
+        List<Card> cards = new List<Card>();
+
+        for (int i = 0; i < textsAssets.Length; i++)
+        {
+            Card card = new Card();
+            card = JsonUtility.FromJson<Card>(textsAssets[i].text);
+            cards.Add(card);
+        }
+
+        return cards.ToArray();
+    }
 
     /// <summary>
     /// Возвращает спрайт из папки Resources (или null).

@@ -1,0 +1,55 @@
+{
+    "name": "",
+    "firstDayCard": false,
+    "speakingName": "Рома сосед",	
+    "title": "Как будешь выхи проводить",
+    "day": 0,
+    "backgroundImageName": "",
+    "cardImageName": "",
+	
+    "swipe_left": {
+	  "next": "",
+        "text": "Надо бы учебу подтянуть",
+        "genius": {
+            "respect": 2,
+            "knowledge": 1,
+            "health": -1,
+            "money": 0
+        },
+        "psychologist": {
+            "respect": 1,
+            "knowledge": 2,
+            "health": -2,
+            "money": 0
+        },
+        "sportsman": {
+            "respect": 1,
+            "knowledge": 1,
+            "health": -1,
+            "money": 0
+        }
+    },
+	
+    "swipe_right": {
+	  "next": "",
+        "text": "Надо бы отдохнуть",
+        "genius": {
+            "respect": -1,
+            "knowledge": -2,
+            "health": 1,
+            "money": 0
+        },
+        "psychologist": {
+            "respect": -2,
+            "knowledge": -1,
+            "health": 2,
+            "money": 0
+        },
+        "sportsman": {
+            "respect": -1,
+            "knowledge": -1,
+            "health": 1,
+            "money": 0
+        }
+    }
+}

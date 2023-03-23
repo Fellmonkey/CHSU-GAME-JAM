@@ -10,7 +10,7 @@ public static class SaveManager
     static SaveManager()
     {
 #if UNITY_ANDROID && !UNITY_EDITOR
-        pathToSaveFolder = Path.Combine(Application.persistentDataPath, "Saved games", "Save.json");
+        pathToSaveGame = Path.Combine(Application.persistentDataPath, "Saved games", "Save.json");
 #else
         pathToSaveGame = Path.Combine(Application.dataPath, "Saved games", "Save.json");
 #endif
@@ -50,9 +50,6 @@ public static class SaveManager
 
         return saveGame;
     }
-    /// <summary>
-    /// Временное решение
-    /// </summary>
     public static void DeleteSaveGame()
     {
         File.Delete(pathToSaveGame);

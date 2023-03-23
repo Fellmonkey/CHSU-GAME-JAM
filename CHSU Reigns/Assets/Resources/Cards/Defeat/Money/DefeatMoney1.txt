@@ -1,0 +1,58 @@
+{
+    "name": "",
+
+    "firstDayCard": false,
+
+    "speakingName": "",
+	
+    "title": "У меня в комнате закончились все тараканы и мне нечего теперь есть. Отвратительный ВУЗ.",
+    "day": 0,
+    "backgroundImageName": "",
+    "cardImageName": "",
+	
+    "swipe_left": {
+ "next": "",
+        "text": "",
+        "genius": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": 0,
+            "money": 0
+        },
+        "psychologist": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": 0,
+            "money": 0
+        },
+        "sportsman": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": 0,
+            "money": 0
+        }
+    },
+	
+    "swipe_right": {
+ "next": "",
+        "text": "",
+        "genius": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": 0,
+            "money": 0
+        },
+        "psychologist": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": 0,
+            "money": 0
+        },
+        "sportsman": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": 0,
+            "money": 0
+        }
+    }
+}

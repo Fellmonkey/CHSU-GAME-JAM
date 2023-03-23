@@ -5,8 +5,8 @@
 [System.Serializable]
 public enum PlayerClass
 {
-    Genius,
-    Psychologist,
-    Sportsman
+    Genius = 0,
+    Psychologist = 1,
+    Sportsman = 2
 }
 

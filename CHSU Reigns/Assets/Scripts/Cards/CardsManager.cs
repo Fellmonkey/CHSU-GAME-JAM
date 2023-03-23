@@ -27,12 +27,18 @@ public static class CardsManager
     /// </summary>
     public static Card[] randomCards { private set; get; }
 
+    public static Card[] defeatMoneyCards { private set; get; }
+    public static Card[] defeatHealthCards { private set; get; }
+    public static Card[] defeatKnowledgeCards { private set; get; }
+    public static Card[] defeatRespectCards { private set; get; }
+
+
     /// <summary>
     /// Загружает карты.
     /// </summary>
     public static void LoadCards()
     {
-        cards = ResourcesManager.GetCards();
+        cards = ResourcesManager.GetGameCards();
         List<Card> eventCards = new List<Card>();
         List<Card> randomCards = new List<Card>();
 
@@ -46,6 +52,11 @@ public static class CardsManager
 
         CardsManager.eventCards = eventCards.ToArray();
         CardsManager.randomCards = randomCards.ToArray();
+
+        defeatHealthCards = ResourcesManager.GetDefeatCards(CharacteristicType.health);
+        defeatKnowledgeCards = ResourcesManager.GetDefeatCards(CharacteristicType.knowledge);
+        defeatMoneyCards = ResourcesManager.GetDefeatCards(CharacteristicType.money);
+        defeatRespectCards = ResourcesManager.GetDefeatCards(CharacteristicType.respect);
     }
 
     /// <summary>
@@ -54,6 +65,12 @@ public static class CardsManager
     private static Card GetRandomCard()
     {
         int rand = UnityEngine.Random.Range(0, randomCards.Length);
+
+        while (randomCards[rand].id == gameCard.id)
+        {
+            rand = UnityEngine.Random.Range(0, randomCards.Length);
+        }
+
         return randomCards[rand];
     }
 
@@ -106,7 +123,28 @@ public static class CardsManager
         Card nextCard = null;
         SwipeType swipeType = GameManager.GetSwipeLastCard(); 
 
-        if(gameCard != null) // чек след. карты
+        if(GameManager.GetDefeat()) // поражение
+        {
+            Characteristics characteristics = GameManager.GetCharacteristics();
+
+            if (characteristics.respect == 0)
+            {
+                nextCard = defeatRespectCards[Random.Range(0, defeatRespectCards.Length)];
+            }
+            else if (characteristics.knowledge == 0)
+            {
+                nextCard = defeatKnowledgeCards[Random.Range(0, defeatKnowledgeCards.Length)];
+            }
+            else if (characteristics.money == 0)
+            {
+                nextCard = defeatMoneyCards[Random.Range(0, defeatMoneyCards.Length)];
+            }
+            else
+            {
+                nextCard = defeatHealthCards[Random.Range(0, defeatHealthCards.Length)];
+            }
+        }
+        else if(gameCard != null) // чек след. карты
         {
             // есть карта, при свайпе влево
             if (swipeType == SwipeType.Left && gameCard.swipe_left.next.Length > 0)
@@ -129,7 +167,7 @@ public static class CardsManager
                 }
             }
         }
-        else
+        else // новый день
         {
             nextCard = CheckTheDayCard(GameManager.GetGameDay()); // ищем дневную
 

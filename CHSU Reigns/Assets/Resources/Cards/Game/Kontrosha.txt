@@ -1,0 +1,55 @@
+{
+    "name": "",
+    "firstDayCard": false,
+    "speakingName": "Петя одногруппник",
+    "title": "Ты же помнишь что у нас завтра контрольная",
+    "day": 0,
+    "backgroundImageName": "",
+    "cardImageName": "",
+	
+    "swipe_left": {
+        "next": "",
+        "text": "Я совсем забыл. Надо сегодня хоть что-то поповторять",
+        "genius": {
+            "respect": 2,
+            "knowledge": 2,
+            "health": -2,
+            "money": -2
+        },
+        "psychologist": {
+            "respect": 2,
+            "knowledge": 2,
+            "health": -2,
+            "money": -2
+        },
+        "sportsman": {
+            "respect": 2,
+            "knowledge": 2,
+            "health": -2,
+            "money": -2
+        }
+    },
+	
+    "swipe_right": {
+        "next": "",
+        "text": "Ну и ладно. Всё равно я неготовился.",
+        "genius": {
+            "respect": -2,
+            "knowledge": -2,
+            "health": 2,
+            "money": 0
+        },
+        "psychologist": {
+            "respect": -2,
+            "knowledge": -2,
+            "health": 2,
+            "money": 0
+        },
+        "sportsman": {
+            "respect": -2,
+            "knowledge": -2,
+            "health": 2,
+            "money": 0
+        }
+    }
+}

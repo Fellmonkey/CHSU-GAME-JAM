@@ -1,0 +1,55 @@
+{
+    "name": "",
+    "firstDayCard": false,
+    "speakingName": "Лёша знакомый",
+    "title": "Подменишь меня сегодня на работе ночью?",
+    "day": 0,
+    "backgroundImageName": "",
+    "cardImageName": "",
+	
+    "swipe_left": {
+	  "next": "",
+        "text": "Хорошо",
+        "genius": {
+            "respect": 1,
+            "knowledge": -2,
+            "health": 0,
+            "money": 1
+        },
+        "psychologist": {
+            "respect": 1,
+            "knowledge": -2,
+            "health": 0,
+            "money": 1
+        },
+        "sportsman": {
+            "respect": 1,
+            "knowledge": -2,
+            "health": 0,
+            "money": 1
+        }
+    },
+	
+    "swipe_right": {
+	  "next": "",
+        "text": "Мне надо выспаться перед парами",
+        "genius": {
+            "respect": -1,
+            "knowledge": 0,
+            "health": 1,
+            "money": 0
+        },
+        "psychologist": {
+            "respect": -1,
+            "knowledge": 0,
+            "health": 1,
+            "money": 0
+        },
+        "sportsman": {
+            "respect": -1,
+            "knowledge": 0,
+            "health": 1,
+            "money": 0
+        }
+    }
+}

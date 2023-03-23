@@ -1,0 +1,55 @@
+{
+    "name": "",
+    "firstDayCard": false,
+    "speakingName": "Кирилл сосед",
+    "title": "Тебе купить лекарства?",
+    "day": 0,
+    "backgroundImageName": "",
+    "cardImageName": "",
+	
+    "swipe_left": {
+	  "next": "",
+        "text": "Да я просто простудился",
+        "genius": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": -2,
+            "money": 0
+        },
+        "psychologist": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": -2,
+            "money": 0
+        },
+        "sportsman": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": -2,
+            "money": 0
+        }
+    },
+	
+    "swipe_right": {
+	  "next": "",
+        "text": "Буду благодарен",
+        "genius": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": -1,
+            "money": -2
+        },
+        "psychologist": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": -1,
+            "money": -2
+        },
+        "sportsman": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": -1,
+            "money": -2
+        }
+    }
+}

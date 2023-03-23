@@ -1,0 +1,55 @@
+{
+    "name": "",
+    "firstDayCard": false,
+    "speakingName": "Сознание",
+    "title": "Всю ночь не спал... Может быть прогулять проверочную?",
+    "day": 0,
+    "backgroundImageName": "",
+    "cardImageName": "",
+	
+    "swipe_left": {
+	  "next": "",
+        "text": "Надо сходить",
+        "genius": {
+            "respect": 0,
+            "knowledge": 1,
+            "health": -1,
+            "money": 0
+        },
+        "psychologist": {
+            "respect": 1,
+            "knowledge": 0,
+            "health": -2,
+            "money": 0
+        },
+        "sportsman": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": -1,
+            "money": 0
+        }
+    },
+	
+    "swipe_right": {
+	  "next": "",
+        "text": "Отосплюсь лучше",
+        "genius": {
+            "respect": -2,
+            "knowledge": 0,
+            "health": 1,
+            "money": 0
+        },
+        "psychologist": {
+            "respect": -1,
+            "knowledge": 0,
+            "health": 2,
+            "money": 0
+        },
+        "sportsman": {
+            "respect": -2,
+            "knowledge": 0,
+            "health": 1,
+            "money": 0
+        }
+    }
+}

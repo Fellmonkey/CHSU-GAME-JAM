@@ -1,0 +1,55 @@
+{
+    "name": "",
+    "firstDayCard": false,
+    "speakingName": "Женя одногруппник",
+    "title": "Кафе или столовая?",
+    "day": 0,
+    "backgroundImageName": "",
+    "cardImageName": "",
+	
+    "swipe_left": {
+	  "next": "",
+        "text": "Кафе",
+        "genius": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": 2,
+            "money": -2
+        },
+        "psychologist": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": 2,
+            "money": -2
+        },
+        "sportsman": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": 2,
+            "money": -2
+        }
+    },
+	
+    "swipe_right": {
+        "next": "",
+        "text": "Столовая",
+        "genius": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": 1,
+            "money": -1
+        },
+        "psychologist": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": 1,
+            "money": -1
+        },
+        "sportsman": {
+            "respect": 0,
+            "knowledge": 0,
+            "health": 1,
+            "money": -1
+        }
+    }
+}

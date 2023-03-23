@@ -1,0 +1,55 @@
+{
+    "name": "",
+    "firstDayCard": false,
+    "speakingName": "Сознание",
+    "title": "Опаздываю на пару. На такси или на автобусе?",
+    "day": 0,
+    "backgroundImageName": "",
+    "cardImageName": "",
+	
+    "swipe_left": {
+	  "next": "",
+        "text": "Такси",
+        "genius": {
+            "respect": 0,
+            "knowledge": 1,
+            "health": 1,
+            "money": -2
+        },
+        "psychologist": {
+            "respect": 1,
+            "knowledge": 1,
+            "health": 1,
+            "money": -2
+        },
+        "sportsman": {
+            "respect": 0,
+            "knowledge": 1,
+            "health": 1,
+            "money": -2
+        }
+    },
+	
+    "swipe_right": {
+	  "next": "",
+        "text": "Автобус",
+        "genius": {
+            "respect": -2,
+            "knowledge": 1,
+            "health": -1,
+            "money": -1
+        },
+        "psychologist": {
+            "respect": -1,
+            "knowledge": 1,
+            "health": -2,
+            "money": -1
+        },
+        "sportsman": {
+            "respect": -1,
+            "knowledge": 1,
+            "health": -1,
+            "money": -1
+        }
+    }
+}
