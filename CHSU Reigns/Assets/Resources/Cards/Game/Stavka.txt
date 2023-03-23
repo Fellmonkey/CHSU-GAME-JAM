@@ -5,7 +5,7 @@
     "title": "Сегодня футбол! Не хочешь поставить на фаворита?",
     "day": 0,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "student-orange",
 	
     "swipe_left": {
 	  "next": "",

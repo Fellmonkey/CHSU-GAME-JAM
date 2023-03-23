@@ -5,7 +5,7 @@
     "title": "Как будешь выхи проводить",
     "day": 0,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "dorm-friend",
 	
     "swipe_left": {
 	  "next": "",

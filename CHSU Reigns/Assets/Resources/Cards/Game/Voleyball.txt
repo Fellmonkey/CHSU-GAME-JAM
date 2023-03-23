@@ -5,7 +5,7 @@
     "title": "Сегодня занятие по воллейболу. Ты пойдёшь?",
     "day": 0,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "student-purple",
 	
     "swipe_left": {
 	  "next": "",

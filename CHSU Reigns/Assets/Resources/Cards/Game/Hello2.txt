@@ -5,7 +5,7 @@
     "title": "Да у нас то ладно... Я что звоню то! Ты ж бедолага, картошку взять забыл. В город поеду - завезу!",
     "day": 1,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "batya",
 	
     "swipe_left": {
         "next": "Hello3",

@@ -5,7 +5,7 @@
     "title": "Сегодня ночью идём в компьютерный клуб. Ты с нами?",
     "day": 0,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "student-red",
 	
     "swipe_left": {
 	  "next": "",

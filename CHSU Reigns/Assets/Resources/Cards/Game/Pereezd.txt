@@ -5,7 +5,7 @@
     "title": "Я сегодня переезжаю - поможешь?",
     "day": 0,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "starosta",
 	
     "swipe_left": {
 	  "next": "",

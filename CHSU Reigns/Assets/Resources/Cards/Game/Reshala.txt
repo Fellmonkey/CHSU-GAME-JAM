@@ -5,7 +5,7 @@
     "title": "Там ребята из соседней комнаты шумят. Сходи - успокой их",
     "day": 15,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "dorm-friend",
 	
     "swipe_left": {
         "next": "Nuchto1",

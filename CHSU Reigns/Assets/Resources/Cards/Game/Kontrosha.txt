@@ -5,7 +5,7 @@
     "title": "Ты же помнишь что у нас завтра контрольная",
     "day": 0,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "student-green",
 	
     "swipe_left": {
         "next": "",

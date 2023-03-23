@@ -5,7 +5,7 @@
     "title": "Будешь права получать?",
     "day": 0,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "student-salad",
 	
     "swipe_left": {
 	  "next": "",

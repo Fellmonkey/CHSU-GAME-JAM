@@ -5,7 +5,7 @@
     "title": "На следующем занятии вам нужно будет подготовить лабу из моего списка",
     "day": 0,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "pisha",
 	
     "swipe_left": {
         "next": "",

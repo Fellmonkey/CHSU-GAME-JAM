@@ -5,7 +5,7 @@
     "title": "Студент, что-то ты давно нас не навещал. Мы тебя ждём на этих выходных",
     "day": 0,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "batya",
 	
     "swipe_left": {
         "next": "",

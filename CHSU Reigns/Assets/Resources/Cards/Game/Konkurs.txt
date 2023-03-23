@@ -5,7 +5,7 @@
     "title": "Там конкурс какой-то. Поучавствуешь?",
     "day": 1,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "starosta",
 	
     "swipe_left": {
         "next": "",

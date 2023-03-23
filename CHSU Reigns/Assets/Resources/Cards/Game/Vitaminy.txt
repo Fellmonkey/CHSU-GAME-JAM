@@ -5,7 +5,7 @@
     "title": "Пойду себе витаминки для профилактики куплю. Ты со мной?",
     "day": 0,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "student-green",
 	
     "swipe_left": {
 	  "next": "",

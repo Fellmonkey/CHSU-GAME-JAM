@@ -5,7 +5,7 @@
     "title": "Слушай, а ты пойдешь с нами в бар - отмечать поступление",
     "day": 1,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "student-turquoise",
 	
     "swipe_left": {
 	  "next": "Konkurs",

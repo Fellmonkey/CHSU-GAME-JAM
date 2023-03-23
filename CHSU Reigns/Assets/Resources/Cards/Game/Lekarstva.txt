@@ -5,7 +5,7 @@
     "title": "Тебе купить лекарства?",
     "day": 0,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "dorm-friend",
 	
     "swipe_left": {
 	  "next": "",

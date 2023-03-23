@@ -5,7 +5,7 @@
     "title": "Вся группа решила прогулять пару. Ты с нами?",
     "day": 0,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "student-orange",
 	
     "swipe_left": {
         "next": "",

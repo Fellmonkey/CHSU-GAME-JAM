@@ -5,7 +5,7 @@
     "title": "Будешь на выходных работать?",
     "day": 0,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "student-pink",
 	
     "swipe_left": {
 	  "next": "",

@@ -5,7 +5,7 @@
     "title": "Подменишь меня сегодня на работе ночью?",
     "day": 0,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "student-purple",
 	
     "swipe_left": {
 	  "next": "",

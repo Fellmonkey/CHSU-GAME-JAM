@@ -5,7 +5,7 @@
     "title": "Привет,студент! Ну как доехал?",
     "day": 1,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "batya",
 	
     "swipe_left": {
         "next": "Hello2",

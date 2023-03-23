@@ -5,7 +5,7 @@
     "title": "Мы решили перенести контрольную на вечер",
     "day": 0,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "starosta",
 	
     "swipe_left": {
         "next": "",

@@ -5,7 +5,7 @@
     "title": "Мы сегодня в покер на деньги собираемся. Ты с нами?",
     "day": 0,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "dorm-friend",
 	
     "swipe_left": {
 	  "next": "",

@@ -5,7 +5,7 @@
     "title": "Приветствую всех в нашем ВУЗе. Я ваш куратор - Александр Павлович. А теперь расскажите о себе!",
     "day": 1,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "idk-tbh",
 	
     "swipe_left": {
 	  "next": "Tusa",

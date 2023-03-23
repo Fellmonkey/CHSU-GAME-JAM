@@ -5,7 +5,7 @@
     "title": "Хей! Ты пойдёшь сегодня пить?",
     "day": 0,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "student-purple",
 	
     "swipe_left": {
 	  "next": "",

@@ -5,7 +5,7 @@
     "title": "Я хотел бы с вами, обсудить вашу успеваемость. Может пообедаем вместе?",
     "day": 0,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "pisha",
 	
     "swipe_left": {
 	  "next": "",

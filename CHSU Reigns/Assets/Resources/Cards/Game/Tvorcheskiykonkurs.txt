@@ -5,7 +5,7 @@
     "title": "Будет проводится творческий конкурс, но возможны прогулы",
     "day": 0,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "student-yellow",
 	
     "swipe_left": {
         "next": "",

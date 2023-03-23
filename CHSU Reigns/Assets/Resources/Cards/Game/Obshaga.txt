@@ -5,7 +5,7 @@
     "title": "Там твою кровать заняли. Будешь её отбирать?",
     "day": 1,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "dorm-friend",
 	
     "swipe_left": {
 	  "next": "Kurator",

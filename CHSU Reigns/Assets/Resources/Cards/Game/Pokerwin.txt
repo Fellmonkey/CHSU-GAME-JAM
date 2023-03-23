@@ -5,7 +5,7 @@
     "title": "Будешь в покер играть? ",
     "day": 0,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "student-red",
 	
     "swipe_left": {
 	  "next": "",

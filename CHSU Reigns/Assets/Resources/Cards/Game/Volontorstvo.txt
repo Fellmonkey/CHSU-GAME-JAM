@@ -5,7 +5,7 @@
     "title": "Нужна помощь в организации мероприятия. Поможешь?",
     "day": 0,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "student-cyan",
 	
     "swipe_left": {
 	  "next": "",

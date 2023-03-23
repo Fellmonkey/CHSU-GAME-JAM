@@ -5,7 +5,7 @@
     "title": "Что-то ты бледный какой-то... Ты пойдёшь сегодня в ВУЗ?",
     "day": 0,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "starosta",
 	
     "swipe_left": {
 	  "next": "",

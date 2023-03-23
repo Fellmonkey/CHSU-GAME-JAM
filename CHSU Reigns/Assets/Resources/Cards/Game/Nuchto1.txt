@@ -5,7 +5,7 @@
     "title": "Из-за громкой музыки никто не выспался.",
     "day": 15,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "dorm-friend",
 	
     "swipe_left": {
         "next": "",

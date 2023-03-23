@@ -5,7 +5,7 @@
     "title": "Вот и славно! Заеду к тебе, когда в город поеду. ",
     "day": 1,
     "backgroundImageName": "",
-    "cardImageName": "",
+    "cardImageName": "batya",
 	
     "swipe_left": {
         "next": "Obshaga",
