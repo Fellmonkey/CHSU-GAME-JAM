@@ -1,15 +1,14 @@
 {
     "name": "",
     "firstDayCard": false,
-    "speakingName": "ноунейм",
-	
+    "speakingName": "Женя одногруппник",
     "title": "Кафе или столовая?",
     "day": 0,
     "backgroundImageName": "",
     "cardImageName": "",
 	
     "swipe_left": {
-        "next": "",
+	  "next": "",
         "text": "Кафе",
         "genius": {
             "respect": 0,

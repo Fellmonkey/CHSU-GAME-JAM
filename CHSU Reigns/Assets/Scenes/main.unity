@@ -412,7 +412,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Title text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6ff884c83157a0f4b8a8cd7abba32e3f, type: 2}
   m_sharedMaterial: {fileID: -1472306405715844123, guid: 6ff884c83157a0f4b8a8cd7abba32e3f, type: 2}
@@ -1812,8 +1812,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 180, y: 130}
-  m_SizeDelta: {x: 300, y: 60}
+  m_AnchoredPosition: {x: 259.99, y: 130}
+  m_SizeDelta: {x: 459.98, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &703385456
 MonoBehaviour:
@@ -1835,7 +1835,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Power PI
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6ff884c83157a0f4b8a8cd7abba32e3f, type: 2}
   m_sharedMaterial: {fileID: -1472306405715844123, guid: 6ff884c83157a0f4b8a8cd7abba32e3f, type: 2}
@@ -1862,7 +1862,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2343,7 +2343,7 @@ MonoBehaviour:
   moneyEffect: {fileID: 1252658834}
   healthEffect: {fileID: 789809896}
   day: {fileID: 2044785506}
-  namePlayer: {fileID: 703385456}
+  classPlayer: {fileID: 703385456}
   characteristicsEffect:
   - {fileID: 1642095845}
   - {fileID: 2008680897}
@@ -3520,7 +3520,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: no name
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6ff884c83157a0f4b8a8cd7abba32e3f, type: 2}
   m_sharedMaterial: {fileID: -1472306405715844123, guid: 6ff884c83157a0f4b8a8cd7abba32e3f, type: 2}
@@ -4738,7 +4738,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0414\u0435\u043D\u044C 8"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6ff884c83157a0f4b8a8cd7abba32e3f, type: 2}
   m_sharedMaterial: {fileID: -1472306405715844123, guid: 6ff884c83157a0f4b8a8cd7abba32e3f, type: 2}
@@ -4765,7 +4765,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

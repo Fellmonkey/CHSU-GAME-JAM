@@ -1,18 +1,14 @@
 {
     "name": "",
-   
-
     "firstDayCard": false,
-
-    "speakingName": "ноунейм",
-	
+    "speakingName": "Сознание",
     "title": "Опаздываю на пару. На такси или на автобусе?",
     "day": 0,
     "backgroundImageName": "",
     "cardImageName": "",
 	
     "swipe_left": {
-"next": "",
+	  "next": "",
         "text": "Такси",
         "genius": {
             "respect": 0,
@@ -35,7 +31,7 @@
     },
 	
     "swipe_right": {
-"next": "",
+	  "next": "",
         "text": "Автобус",
         "genius": {
             "respect": -2,

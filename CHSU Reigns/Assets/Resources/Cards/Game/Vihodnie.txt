@@ -1,18 +1,14 @@
 {
     "name": "",
-    
-
     "firstDayCard": false,
-
-    "speakingName": "ноунейм",
-	
+    "speakingName": "Рома сосед",	
     "title": "Как будешь выхи проводить",
     "day": 0,
     "backgroundImageName": "",
     "cardImageName": "",
 	
     "swipe_left": {
-"next": "",
+	  "next": "",
         "text": "Надо бы учебу подтянуть",
         "genius": {
             "respect": 2,
@@ -35,7 +31,7 @@
     },
 	
     "swipe_right": {
-"next": "",
+	  "next": "",
         "text": "Надо бы отдохнуть",
         "genius": {
             "respect": -1,

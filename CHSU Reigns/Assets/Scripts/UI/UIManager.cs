@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour
 
     [Header("Texts")]
     [SerializeField] private TextMeshProUGUI day;
-    [SerializeField] private TextMeshProUGUI namePlayer;
+    [SerializeField] private TextMeshProUGUI classPlayer;
 
     [Header("Animation")]
     [SerializeField] private Animator[] characteristicsEffect;
@@ -105,7 +105,7 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public static void SetNamePlayer(string name)
     {
-        instance.namePlayer.text = name;
+        instance.classPlayer.text = name;
     }
 
     /// <summary>
@@ -156,4 +156,21 @@ public class UIManager : MonoBehaviour
         performanceForCharacteristics(2,"health",CharacteristicType.health);
         performanceForCharacteristics(3,"money",CharacteristicType.money);
     }
+
+    public static void SetPlayerClassUI(PlayerClass playerClass)
+    {
+        if (playerClass == PlayerClass.Genius)
+        {
+            instance.classPlayer.text = "Класс: гений";
+        }
+        else if (playerClass == PlayerClass.Psychologist)
+        {
+            instance.classPlayer.text = "Класс: психолог";
+        }
+        else
+        {
+            instance.classPlayer.text = "Класс: спортсмен";
+        }
+    }
+
 }

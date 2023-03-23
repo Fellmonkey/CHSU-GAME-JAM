@@ -1,17 +1,14 @@
 {
     "name": "Obshaga",
-
     "firstDayCard": false,
-
-    "speakingName": "ноунейм",
-	
+    "speakingName": "Кирилл сосед",
     "title": "Там твою кровать заняли. Будешь её отбирать?",
     "day": 1,
     "backgroundImageName": "",
     "cardImageName": "",
 	
     "swipe_left": {
-    "next": "Kurator",
+	  "next": "Kurator",
         "text": "Попробуем",
         "genius": {
             "respect": 0,
@@ -34,7 +31,7 @@
     },
 	
     "swipe_right": {
-    "next": "Kurator",
+	  "next": "Kurator",
         "text": "Да переживу я",
         "genius": {
             "respect": 0,

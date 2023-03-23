@@ -1,18 +1,14 @@
 {
     "name": "",
-    
-
     "firstDayCard": false,
-
-    "speakingName": "ноунейм",
-	
+    "speakingName": "Папа",
     "title": "Сынок, поможешь мне с работой?",
     "day": 0,
     "backgroundImageName": "",
     "cardImageName": "",
 	
     "swipe_left": {
-"next": "",
+	  "next": "",
         "text": "Да",
         "genius": {
             "respect": -1,
@@ -35,7 +31,7 @@
     },
 	
     "swipe_right": {
-"next": "",
+	  "next": "",
         "text": "Нет, у меня пара",
         "genius": {
             "respect": -1,

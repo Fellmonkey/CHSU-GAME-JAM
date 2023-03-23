@@ -1,8 +1,7 @@
 {
     "name": "Hello2",
     "firstDayCard": false,
-    "speakingName": "ноунейм",
-	
+    "speakingName": "Папа",
     "title": "Да у нас то ладно... Я что звоню то! Ты ж бедолага, картошку взять забыл. В город поеду - завезу!",
     "day": 1,
     "backgroundImageName": "",
@@ -32,25 +31,25 @@
     },
 	
     "swipe_right": {
-        "next": "Hello3",
-        "text": "Да не надо, па...",
+        "next": "Hello3.1",
+        "text": "Хорошо, буду ждать",
         "genius": {
             "respect": 0,
             "knowledge": 0,
             "health": 0,
-            "money": 0
+            "money": 1
         },
         "psychologist": {
             "respect": 0,
             "knowledge": 0,
             "health": 0,
-            "money": 0
+            "money": 1
         },
         "sportsman": {
             "respect": 0,
             "knowledge": 0,
             "health": 0,
-            "money": 0
+            "money": 1
         }
     }
 }

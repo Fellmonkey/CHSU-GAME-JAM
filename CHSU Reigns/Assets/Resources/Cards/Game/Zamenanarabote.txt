@@ -1,18 +1,14 @@
 {
     "name": "",
-    
-
     "firstDayCard": false,
-
-    "speakingName": "ноунейм",
-	
+    "speakingName": "Лёша знакомый",
     "title": "Подменишь меня сегодня на работе ночью?",
     "day": 0,
     "backgroundImageName": "",
     "cardImageName": "",
 	
     "swipe_left": {
-"next": "",
+	  "next": "",
         "text": "Хорошо",
         "genius": {
             "respect": 1,
@@ -35,7 +31,7 @@
     },
 	
     "swipe_right": {
-"next": "",
+	  "next": "",
         "text": "Мне надо выспаться перед парами",
         "genius": {
             "respect": -1,

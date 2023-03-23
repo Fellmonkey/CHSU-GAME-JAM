@@ -1,18 +1,14 @@
 {
     "name": "",
-    
-
     "firstDayCard": false,
-
-    "speakingName": "ноунейм",
-	
+    "speakingName": "Андрей одногруппник",
     "title": "Сегодня занятие по воллейболу. Ты пойдёшь?",
     "day": 0,
     "backgroundImageName": "",
     "cardImageName": "",
 	
     "swipe_left": {
-"next": "",
+	  "next": "",
         "text": "Спорт - это хорошо",
         "genius": {
             "respect": 2,
@@ -35,7 +31,7 @@
     },
 	
     "swipe_right": {
-"next": "",
+	  "next": "",
         "text": "Пойду за учебу",
         "genius": {
             "respect": 0,

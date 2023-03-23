@@ -1,18 +1,14 @@
 {
     "name": "",
-    
-
     "firstDayCard": false,
-
-    "speakingName": "ноунейм",
-	
+    "speakingName": "Лёша знакомый",
     "title": "Сегодня футбол! Не хочешь поставить на фаворита?",
     "day": 0,
     "backgroundImageName": "",
     "cardImageName": "",
 	
     "swipe_left": {
-"next": "",
+	  "next": "",
         "text": "В другой раз",
         "genius": {
             "respect": -1,
@@ -35,7 +31,7 @@
     },
 	
     "swipe_right": {
-"next": "",
+	  "next": "",
         "text": "Кто не рискует, тот не пьёт шампанское",
         "genius": {
             "respect": 2,

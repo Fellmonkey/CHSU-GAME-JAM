@@ -1,18 +1,15 @@
 {
-    "name": "",
-
+    "name": "Nuchto1",
     "firstDayCard": false,
-
-    "speakingName": "",
-	
-    "title": "пизда репутации",
-    "day": 0,
+    "speakingName": "Рома сосед",
+    "title": "Из-за громкой музыки никто не выспался.",
+    "day": 15,
     "backgroundImageName": "",
     "cardImageName": "",
 	
     "swipe_left": {
- "next": "",
-        "text": "ок",
+        "next": "",
+        "text": "",
         "genius": {
             "respect": 0,
             "knowledge": 0,
@@ -34,8 +31,8 @@
     },
 	
     "swipe_right": {
- "next": "",
-        "text": "хуй с ним",
+        "next": "",
+        "text": "",
         "genius": {
             "respect": 0,
             "knowledge": 0,

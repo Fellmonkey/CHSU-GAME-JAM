@@ -5,14 +5,14 @@
 
     "speakingName": "",
 	
-    "title": "пизда жизни",
+    "title": "Я не смог найти дорогу до ВУЗа и меня отчислили.",
     "day": 0,
     "backgroundImageName": "",
     "cardImageName": "",
 	
     "swipe_left": {
  "next": "",
-        "text": "похуй",
+        "text": "",
         "genius": {
             "respect": 0,
             "knowledge": 0,
@@ -35,7 +35,7 @@
 	
     "swipe_right": {
  "next": "",
-        "text": "хуй с ним",
+        "text": "",
         "genius": {
             "respect": 0,
             "knowledge": 0,

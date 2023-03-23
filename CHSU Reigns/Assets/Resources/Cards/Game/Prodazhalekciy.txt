@@ -1,18 +1,14 @@
 {
     "name": "",
-   
-
     "firstDayCard": false,
-
-    "speakingName": "ноунейм",
-	
+    "speakingName": "Андрей одногруппник",
     "title": "Слушай, а можешь за меня переписать мне лекции, которые у тебя есть? Я заплачу.",
     "day": 0,
     "backgroundImageName": "",
     "cardImageName": "",
 	
     "swipe_left": {
-"next": "",
+	  "next": "",
         "text": "Хм... ну давай",
         "genius": {
             "respect": 1,
@@ -35,7 +31,7 @@
     },
 	
     "swipe_right": {
-"next": "",
+	  "next": "",
         "text": "Не... Мне некогда",
         "genius": {
             "respect": -1,

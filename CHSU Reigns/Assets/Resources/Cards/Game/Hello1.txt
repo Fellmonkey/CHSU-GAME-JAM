@@ -1,7 +1,7 @@
 {
     "name": "Hello1",
     "firstDayCard": true,
-    "speakingName": "ноунейм",
+    "speakingName": "Папа",
     "title": "Привет,студент! Ну как доехал?",
     "day": 1,
     "backgroundImageName": "",
@@ -32,7 +32,7 @@
 	
     "swipe_right": {
         "next": "Hello2",
-        "text": "Привет, пап! Только к общаге подъехал. Как у вас дела?",
+        "text": "Батя, привет! Заселятся сейчас буду. Вы то как?",
         "genius": {
             "respect": 0,
             "knowledge": 0,

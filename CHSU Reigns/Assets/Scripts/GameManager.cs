@@ -41,16 +41,17 @@ public class GameManager : MonoBehaviour
             gameCharacteristics = saveGame.characteristics;
             gameDay = saveGame.day;
             playerClass = saveGame.playerClass;
-
             CreateNextCard(saveGame.cardId);
         }
         else
         {
             gameDay = 1;
+            playerClass = (PlayerClass)Random.Range(0,3);
             gameCharacteristics.SetDefaultValues();
             CreateNextCard();
         }
 
+        UIManager.SetPlayerClassUI(playerClass);
         UIManager.SetCharacteristics(gameCharacteristics);
         UIManager.SetDay(gameDay);
 

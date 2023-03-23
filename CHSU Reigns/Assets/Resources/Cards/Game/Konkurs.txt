@@ -1,17 +1,14 @@
 {
     "name": "Konkurs",
-
     "firstDayCard": false,
-
-    "speakingName": "ноунейм",
-	
+    "speakingName": "Серёга староста",
     "title": "Там конкурс какой-то. Поучавствуешь?",
     "day": 1,
     "backgroundImageName": "",
     "cardImageName": "",
 	
     "swipe_left": {
-    "next": "",
+        "next": "",
         "text": "Ну давай, давай!",
         "genius": {
             "respect": 1,
@@ -34,7 +31,7 @@
     },
 	
     "swipe_right": {
-    "next": "",
+	  "next": "",
         "text": "Да не моё это",
         "genius": {
             "respect": -1,

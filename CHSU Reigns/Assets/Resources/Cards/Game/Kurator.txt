@@ -1,17 +1,14 @@
 {
     "name": "Kurator",
-
     "firstDayCard": false,
-
-    "speakingName": "ноунейм",
-	
+    "speakingName": "Капслоков А.П.",
     "title": "Приветствую всех в нашем ВУЗе. Я ваш куратор - Александр Павлович. А теперь расскажите о себе!",
     "day": 1,
     "backgroundImageName": "",
     "cardImageName": "",
 	
     "swipe_left": {
-"next": "Tusa",
+	  "next": "Tusa",
         "text": "Вызваться первым",
         "genius": {
             "respect": 1,
@@ -34,7 +31,7 @@
     },
 	
     "swipe_right": {
-"next": "Tusa",
+	  "next": "Tusa",
         "text": "Ждать своей очереди",
         "genius": {
             "respect": 0,

@@ -1,18 +1,14 @@
 {
     "name": "",
-   
-
     "firstDayCard": false,
-
-    "speakingName": "ноунейм",
-	
-    "title": "Я сегодня съезжаю - поможешь с переездом?",
+    "speakingName": "Серёга староста",
+    "title": "Я сегодня переезжаю - поможешь?",
     "day": 0,
     "backgroundImageName": "",
     "cardImageName": "",
 	
     "swipe_left": {
- "next": "",
+	  "next": "",
         "text": "Прости не могу",
         "genius": {
             "respect": -1,
@@ -35,7 +31,7 @@
     },
 	
     "swipe_right": {
- "next": "",
+	  "next": "",
         "text": "Конечно",
         "genius": {
             "respect": 2,

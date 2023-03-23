@@ -1,0 +1,55 @@
+{
+    "name": "Reshala",
+    "firstDayCard": true,
+    "speakingName": "Рома сосед",
+    "title": "Там ребята из соседней комнаты шумят. Сходи - успокой их",
+    "day": 15,
+    "backgroundImageName": "",
+    "cardImageName": "",
+	
+    "swipe_left": {
+        "next": "Nuchto1",
+        "text": "Нет",
+        "genius": {
+            "respect": -2,
+            "knowledge": -1,
+            "health": -1,
+            "money": 0
+        },
+        "psychologist": {
+            "respect": -1,
+            "knowledge": -1,
+            "health": -2,
+            "money": 0
+        },
+        "sportsman": {
+            "respect": -1,
+            "knowledge": -2,
+            "health": -1,
+            "money": 0
+        }
+    },
+	
+    "swipe_right": {
+        "next": "Nucto2",
+        "text": "Пойду поговорю",
+        "genius": {
+            "respect": 1,
+            "knowledge": -1,
+            "health": -2,
+            "money": 0
+        },
+        "psychologist": {
+            "respect": 1,
+            "knowledge": 0,
+            "health": -2,
+            "money": 0
+        },
+        "sportsman": {
+            "respect": 1,
+            "knowledge": -1,
+            "health": -1,
+            "money": 0
+        }
+    }
+}
